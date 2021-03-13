@@ -1,12 +1,12 @@
 ECHO = echo
-DIRS = MazeSolver NQueens
+DIRS = Huffman MakingChange
 all: $(DIRS)
 
-MazeSolver: force_look
-	cd MazeSolver; make
+Huffman: force_look
+	cd Huffman; make
 
-NQueens: force_look
-	cd NQueens; make
+MakingChange: force_look
+	cd MakingChange; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

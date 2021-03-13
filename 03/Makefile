@@ -1,12 +1,15 @@
 ECHO = echo
-DIRS = CircularQueue LinkedQueue
+DIRS = ArrayStack Calculator LinkedListStack
 all: $(DIRS)
 
-CircularQueue: force_look
-	cd CircularQueue; make
+ArrayStack: force_look
+	cd ArrayStack; make
 
-LinkedQueue: force_look
-	cd LinkedQueue; make
+Calculator: force_look
+	cd Calculator; make
+
+LinkedListStack: force_look
+	cd LinkedListStack; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

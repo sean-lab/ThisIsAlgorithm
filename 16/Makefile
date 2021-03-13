@@ -1,12 +1,12 @@
 ECHO = echo
-DIRS = CircularQueue LinkedQueue
+DIRS = MazeSolver NQueens
 all: $(DIRS)
 
-CircularQueue: force_look
-	cd CircularQueue; make
+MazeSolver: force_look
+	cd MazeSolver; make
 
-LinkedQueue: force_look
-	cd LinkedQueue; make
+NQueens: force_look
+	cd NQueens; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

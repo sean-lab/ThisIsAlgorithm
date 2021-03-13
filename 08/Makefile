@@ -1,15 +1,12 @@
 ECHO = echo
-DIRS = Chaining OpenAddressing SimpleHashTable
+DIRS = Heap PriorityQueue
 all: $(DIRS)
 
-Chaining: force_look
-	cd Chaining; make
+Heap: force_look
+	cd Heap; make
 
-OpenAddressing: force_look
-	cd OpenAddressing; make
-
-SimpleHashTable: force_look
-	cd SimpleHashTable; make
+PriorityQueue: force_look
+	cd PriorityQueue; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

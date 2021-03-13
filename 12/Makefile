@@ -1,15 +1,9 @@
 ECHO = echo
-DIRS = FastExponentiation FibonacciDnC MergeSort
+DIRS = RecurrenceSum
 all: $(DIRS)
 
-FastExponentiation: force_look
-	cd FastExponentiation; make
-
-FibonacciDnC: force_look
-	cd FibonacciDnC; make
-
-MergeSort: force_look
-	cd MergeSort; make
+RecurrenceSum: force_look
+	cd RecurrenceSum; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done
