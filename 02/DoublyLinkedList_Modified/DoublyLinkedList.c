@@ -1,6 +1,6 @@
 #include "DoublyLinkedList.h"
 
-/*  ³ëµå »ı¼º */
+/*  ë…¸ë“œ ìƒì„± */
 Node* DLL_CreateNode( ElementType NewData )
 {
     Node* NewNode = (Node*)malloc(sizeof(Node));
@@ -12,23 +12,23 @@ Node* DLL_CreateNode( ElementType NewData )
     return NewNode;
 }
 
-/*  ³ëµå ¼Ò¸ê */
+/*  ë…¸ë“œ ì†Œë©¸ */
 void DLL_DestroyNode( Node* Node )
 {
     free(Node);
 }
 
-/*  ³ëµå Ãß°¡ */
+/*  ë…¸ë“œ ì¶”ê°€ */
 void DLL_AppendNode( Node** Head, Node* NewNode )
 {
-    /*  Çìµå ³ëµå°¡ NULLÀÌ¶ó¸é »õ·Î¿î ³ëµå°¡ Head */
+    /*  í—¤ë“œ ë…¸ë“œê°€ NULLì´ë¼ë©´ ìƒˆë¡œìš´ ë…¸ë“œê°€ Head */
     if ( (*Head) == NULL ) 
     {
         *Head = NewNode;
     } 
     else
     {
-        /*  Å×ÀÏÀ» Ã£¾Æ NewNode¸¦ ¿¬°áÇÑ´Ù. */
+        /*  í…Œì¼ì„ ì°¾ì•„ NewNodeë¥¼ ì—°ê²°í•œë‹¤. */
         Node* Tail = (*Head);
         while ( Tail->NextNode != NULL )
         {
@@ -36,11 +36,11 @@ void DLL_AppendNode( Node** Head, Node* NewNode )
         }
 
         Tail->NextNode = NewNode;
-        NewNode->PrevNode = Tail; /*  ±âÁ¸ÀÇ Å×ÀÏÀ» »õ·Î¿î Å×ÀÏÀÇ PrevNode°¡ °¡¸®Å²´Ù. */
+        NewNode->PrevNode = Tail; /*  ê¸°ì¡´ì˜ í…Œì¼ì„ ìƒˆë¡œìš´ í…Œì¼ì˜ PrevNodeê°€ ê°€ë¦¬í‚¨ë‹¤. */
     }
 }
 
-/*  ³ëµå »ğÀÔ */
+/*  ë…¸ë“œ ì‚½ì… */
 void DLL_InsertAfter( Node* Current, Node* NewNode )
 {
     NewNode->NextNode = Current->NextNode;
@@ -53,7 +53,7 @@ void DLL_InsertAfter( Node* Current, Node* NewNode )
     }
 }
 
-/*  ³ëµå Á¦°Å */
+/*  ë…¸ë“œ ì œê±° */
 void DLL_RemoveNode( Node** Head, Node* Remove )
 {
     if ( *Head == Remove )
@@ -80,7 +80,7 @@ void DLL_RemoveNode( Node** Head, Node* Remove )
     }    
 }
 
-/*  ³ëµå Å½»ö */
+/*  ë…¸ë“œ íƒìƒ‰ */
 Node* DLL_GetNodeAt( Node* Head, int Location )
 {
     Node* Current = Head;
@@ -93,7 +93,7 @@ Node* DLL_GetNodeAt( Node* Head, int Location )
     return Current;
 }
 
-/*  ³ëµå ¼ö ¼¼±â */
+/*  ë…¸ë“œ ìˆ˜ ì„¸ê¸° */
 int DLL_GetNodeCount( Node* Head )
 {
     unsigned int  Count = 0;

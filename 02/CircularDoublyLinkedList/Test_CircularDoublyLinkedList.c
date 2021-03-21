@@ -8,14 +8,14 @@ int main( void )
     Node* NewNode = NULL;
     Node* Current = NULL;
 
-    /*  ³ëµå 5°³ Ãß°¡ */
+    /*  ë…¸ë“œ 5ê°œ ì¶”ê°€ */
     for ( i = 0; i<5; i++ )
     {
         NewNode = CDLL_CreateNode( i );
         CDLL_AppendNode( &List,NewNode );
     }
 
-    /*  ¸®½ºÆ® Ãâ·Â */
+    /*  ë¦¬ìŠ¤íŠ¸ ì¶œë ¥ */
     Count = CDLL_GetNodeCount( List );
     for ( i = 0; i<Count; i++ )
     {
@@ -23,7 +23,7 @@ int main( void )
         printf( "List[%d] : %d\n", i, Current->Data );
     }
 
-    /*  ¸®½ºÆ®ÀÇ ¼¼¹øÂ° Ä­ µÚ¿¡ ³ëµå »ğÀÔ */
+    /*  ë¦¬ìŠ¤íŠ¸ì˜ ì„¸ë²ˆì§¸ ì¹¸ ë’¤ì— ë…¸ë“œ ì‚½ì… */
     printf( "\nInserting 3000 After [2]...\n\n" );
 
     Current = CDLL_GetNodeAt( List, 2 );
@@ -35,8 +35,8 @@ int main( void )
     CDLL_RemoveNode( &List, Current );
     CDLL_DestroyNode( Current );
 
-    /*  ¸®½ºÆ® Ãâ·Â  */
-    /*  (³ëµå ¼öÀÇ 2¹è¸¸Å­ ·çÇÁ¸¦ µ¹¸ç È¯ÇüÀÓÀ» È®ÀÎÇÑ´Ù.) */
+    /*  ë¦¬ìŠ¤íŠ¸ ì¶œë ¥  */
+    /*  (ë…¸ë“œ ìˆ˜ì˜ 2ë°°ë§Œí¼ ë£¨í”„ë¥¼ ëŒë©° í™˜í˜•ì„ì„ í™•ì¸í•œë‹¤.) */
     Count = CDLL_GetNodeCount( List );
     for ( i = 0; i<Count*2; i++ )
     {
@@ -48,7 +48,7 @@ int main( void )
         printf( "List[%d] : %d\n", i, Current->Data );
     }
 
-    /*  ¸ğµç ³ëµå¸¦ ¸Ş¸ğ¸®¿¡¼­ Á¦°Å     */
+    /*  ëª¨ë“  ë…¸ë“œë¥¼ ë©”ëª¨ë¦¬ì—ì„œ ì œê±°     */
     printf( "\nDestroying List...\n" );
 
     Count = CDLL_GetNodeCount( List );

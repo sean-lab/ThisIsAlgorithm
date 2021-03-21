@@ -38,12 +38,12 @@ void CHT_Set( HashTable* HT, KeyType Key, ValueType Value )
     int Address = CHT_Hash( Key, strlen(Key), HT->TableSize );
     Node* NewNode = CHT_CreateNode( Key, Value );
 
-    /*  ÇØ´ç ÁÖ¼Ò°¡ ºñ¾î ÀÖ´Â °æ¿ì */
+    /*  í•´ë‹¹ ì£¼ì†Œê°€ ë¹„ì–´ ìˆëŠ” ê²½ìš° */
     if ( HT->Table[Address] == NULL )
     {
         HT->Table[Address] = NewNode;
     } 
-    /*  ÇØ´ç ÁÖ¼Ò°¡ ºñ¾î ÀÖÁö ¾ÊÀº °æ¿ì */
+    /*  í•´ë‹¹ ì£¼ì†Œê°€ ë¹„ì–´ ìˆì§€ ì•Šì€ ê²½ìš° */
     else
     {    
         List L = HT->Table[Address];
@@ -56,17 +56,17 @@ void CHT_Set( HashTable* HT, KeyType Key, ValueType Value )
 
 ValueType CHT_Get( HashTable* HT, KeyType Key )
 {
-    /*  ÁÖ¼Ò¸¦ ÇØ½ÌÇÑ´Ù. */
+    /*  ì£¼ì†Œë¥¼ í•´ì‹±í•œë‹¤. */
     int Address = CHT_Hash( Key, strlen(Key), HT->TableSize );
 
-    /*  ÇØ½ÌÇÑ ÁÖ¼Ò¿¡ ÀÖ´Â ¸µÅ©µå ¸®½ºÆ®¸¦ °¡Á®¿Â´Ù. */
+    /*  í•´ì‹±í•œ ì£¼ì†Œì— ìˆëŠ” ë§í¬ë“œ ë¦¬ìŠ¤íŠ¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤. */
     List TheList = HT->Table[Address];
     List Target  = NULL;
 
     if ( TheList == NULL )
         return NULL;
 
-    /*  ¿øÇÏ´Â °ªÀ» Ã£À» ¶§±îÁö ¼øÂ÷ Å½»ö. */
+    /*  ì›í•˜ëŠ” ê°’ì„ ì°¾ì„ ë•Œê¹Œì§€ ìˆœì°¨ íƒìƒ‰. */
     while ( 1 )
     {
         if ( strcmp( TheList->Key, Key ) == 0 ) 
@@ -97,7 +97,7 @@ void CHT_DestroyList( List L )
 
 void CHT_DestroyHashTable( HashTable* HT)
 {
-    /*  1. °¢ ¸µÅ©µå ¸®½ºÆ®¸¦ ÀÚÀ¯ ÀúÀå¼Ò¿¡¼­ Á¦°ÅÇÏ±â */
+    /*  1. ê° ë§í¬ë“œ ë¦¬ìŠ¤íŠ¸ë¥¼ ììœ  ì €ì¥ì†Œì—ì„œ ì œê±°í•˜ê¸° */
     int i = 0;
     for ( i=0; i<HT->TableSize; i++ )
     {
@@ -106,7 +106,7 @@ void CHT_DestroyHashTable( HashTable* HT)
         CHT_DestroyList( L );    
     }
 
-    /*  2, ÇØ½Ã Å×ÀÌºíÀ» ÀÚÀ¯ ÀúÀå¼Ò¿¡¼­ Á¦°ÅÇÏ±â. */
+    /*  2, í•´ì‹œ í…Œì´ë¸”ì„ ììœ  ì €ì¥ì†Œì—ì„œ ì œê±°í•˜ê¸°. */
     free ( HT->Table );
     free ( HT );
 }

@@ -32,5 +32,5 @@ void PrintChange( int CoinUnits[], int Change[], int Size )
     int i=0;
 
     for ( i=0; i<Size; i++ )
-        printf( "%8d¿ø : %d°³\n", CoinUnits[i], Change[i] );        
+        printf( "%8dì› : %dê°œ\n", CoinUnits[i], Change[i] );        
 }

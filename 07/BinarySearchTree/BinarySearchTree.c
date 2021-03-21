@@ -84,11 +84,11 @@ BSTNode* BST_RemoveNode( BSTNode* Tree,BSTNode* Parent, ElementType Target )
         Removed = BST_RemoveNode( Tree->Left, Tree, Target );
     else if ( Tree->Data < Target )
         Removed = BST_RemoveNode( Tree->Right, Tree, Target );
-    else /*  ¸ñÇ¥ °ªÀ» Ã£Àº °æ¿ì. */
+    else /*  ëª©í‘œ ê°’ì„ ì°¾ì€ ê²½ìš°. */
     {
         Removed = Tree;
 
-        /*  ÀÙ ³ëµåÀÎ °æ¿ì ¹Ù·Î »èÁ¦ */
+        /*  ìžŽ ë…¸ë“œì¸ ê²½ìš° ë°”ë¡œ ì‚­ì œ */
         if ( Tree->Left == NULL && Tree->Right == NULL )
         {
             if ( Parent->Left == Tree )
@@ -98,17 +98,17 @@ BSTNode* BST_RemoveNode( BSTNode* Tree,BSTNode* Parent, ElementType Target )
         }
         else
         {
-            /*  ÀÚ½ÄÀÌ ¾çÂÊ ´Ù ÀÖ´Â °æ¿ì */
+            /*  ìžì‹ì´ ì–‘ìª½ ë‹¤ ìžˆëŠ” ê²½ìš° */
             if ( Tree->Left != NULL && Tree->Right != NULL ) 
             {
-                /*  ÃÖ¼Ò°ª ³ëµå¸¦ Ã£¾Æ Á¦°ÅÇÑ µÚ ÇöÀçÀÇ ³ëµå¿¡ À§Ä¡½ÃÅ²´Ù. */
+                /*  ìµœì†Œê°’ ë…¸ë“œë¥¼ ì°¾ì•„ ì œê±°í•œ ë’¤ í˜„ìž¬ì˜ ë…¸ë“œì— ìœ„ì¹˜ì‹œí‚¨ë‹¤. */
                 BSTNode* MinNode = BST_SearchMinNode( Tree->Right );
                 MinNode = BST_RemoveNode( Tree, NULL, MinNode->Data );
                 Tree->Data = MinNode->Data;
             }
             else
             {
-                /*  ÀÚ½ÄÀÌ ÇÏ³ª¸¸ ÀÖ´Â °æ¿ì */
+                /*  ìžì‹ì´ í•˜ë‚˜ë§Œ ìžˆëŠ” ê²½ìš° */
                 BSTNode* Temp = NULL;
                 if ( Tree->Left != NULL )
                     Temp = Tree->Left;
@@ -131,12 +131,12 @@ void BST_InorderPrintTree( BSTNode* Node )
     if ( Node == NULL )
         return;
 
-    /*  ¿ÞÂÊ ÇÏÀ§ Æ®¸® Ãâ·Â */
+    /*  ì™¼ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì¶œë ¥ */
     BST_InorderPrintTree( Node->Left );
 
-    /*  ·çÆ® ³ëµå Ãâ·Â */
+    /*  ë£¨íŠ¸ ë…¸ë“œ ì¶œë ¥ */
     printf( "%d ", Node->Data );
 
-    /*  ¿À¸¥ÂÊ ÇÏÀ§ Æ®¸® Ãâ·Â */
+    /*  ì˜¤ë¥¸ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì¶œë ¥ */
     BST_InorderPrintTree( Node->Right );
 }

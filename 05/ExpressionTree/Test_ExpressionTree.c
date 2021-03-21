@@ -7,7 +7,7 @@ int main( void )
     char PostfixExpression[20] = "71*52-/";
     ET_BuildExpressionTree( PostfixExpression, &Root);
 
-    /*  Æ®¸® Ãâ·Â */
+    /*  íŠ¸ë¦¬ ì¶œë ¥ */
     printf("Preorder ...\n");
     ET_PreorderPrintTree( Root );
     printf("\n\n");
@@ -22,7 +22,7 @@ int main( void )
 
     printf("Evaulation Result : %f \n", ET_Evaluate( Root ) );
 
-    /*  Æ®¸® ¼Ò¸ê½ÃÅ°±â */
+    /*  íŠ¸ë¦¬ ì†Œë©¸ì‹œí‚¤ê¸° */
     ET_DestroyTree( Root );
 
     return 0;

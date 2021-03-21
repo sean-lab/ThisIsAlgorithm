@@ -4,12 +4,12 @@
 int main( void )
 {
     
-    /*  ±×·¡ÇÁ »ı¼º     */
+    /*  ê·¸ë˜í”„ ìƒì„±     */
     Graph* graph      = CreateGraph();
     Graph* PrimMST    = CreateGraph();
     Graph* KruskalMST = CreateGraph();
    
-    /*  Á¤Á¡ »ı¼º */
+    /*  ì •ì  ìƒì„± */
     Vertex* A = CreateVertex( 'A' );
     Vertex* B = CreateVertex( 'B' );
     Vertex* C = CreateVertex( 'C' );
@@ -20,7 +20,7 @@ int main( void )
     Vertex* H = CreateVertex( 'H' );
     Vertex* I = CreateVertex( 'I' );
 
-    /*  ±×·¡ÇÁ¿¡ Á¤Á¡À» Ãß°¡ */
+    /*  ê·¸ë˜í”„ì— ì •ì ì„ ì¶”ê°€ */
     AddVertex( graph, A );
     AddVertex( graph, B );
     AddVertex( graph, C );
@@ -31,7 +31,7 @@ int main( void )
     AddVertex( graph, H );
     AddVertex( graph, I );
 
-    /*  Á¤Á¡°ú Á¤Á¡À» °£¼±À¸·Î ÀÕ±â */
+    /*  ì •ì ê³¼ ì •ì ì„ ê°„ì„ ìœ¼ë¡œ ì‡ê¸° */
     AddEdge( A, CreateEdge(A, B, 35) );
     AddEdge( A, CreateEdge(A, E, 247) );
     
@@ -65,7 +65,7 @@ int main( void )
 
     AddEdge( I, CreateEdge(I, G, 106 ) );
     
-    /*  Á¤Á¡ B¸¦ ½ÃÀÛ Á¤Á¡À¸·Î ÇÏ´Â ÃÖ¼Ò ½ÅÀå Æ®¸®. */
+    /*  ì •ì  Bë¥¼ ì‹œì‘ ì •ì ìœ¼ë¡œ í•˜ëŠ” ìµœì†Œ ì‹ ì¥ íŠ¸ë¦¬. */
     printf("Prim's Algorithm\n");
     Prim(graph, B, PrimMST);
     PrintGraph ( PrimMST );
@@ -74,7 +74,7 @@ int main( void )
     Kruskal(graph, KruskalMST);
     PrintGraph ( KruskalMST );
     
-    /*  ±×·¡ÇÁ ¼Ò¸ê */
+    /*  ê·¸ë˜í”„ ì†Œë©¸ */
     DestroyGraph( PrimMST );
     DestroyGraph( KruskalMST );
     DestroyGraph( graph );

@@ -12,7 +12,7 @@ typedef struct tagNode
     struct tagNode* NextNode;
 } Node;
 
-/* ÇÔ¼ö ¿øÇü ¼±¾ğ */
+/* í•¨ìˆ˜ ì›í˜• ì„ ì–¸ */
 Node* SLL_CreateNode(ElementType NewData);
 void  SLL_DestroyNode(Node* Node);
 void  SLL_AppendNode(Node** Head, Node* NewNode);

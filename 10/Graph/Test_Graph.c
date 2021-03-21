@@ -2,24 +2,24 @@
 
 int main( void )
 {
-    /*  ±×·¡ÇÁ »ı¼º     */
+    /*  ê·¸ë˜í”„ ìƒì„±     */
     Graph* G = CreateGraph();
     
-    /*  Á¤Á¡ »ı¼º */
+    /*  ì •ì  ìƒì„± */
     Vertex* V1 = CreateVertex( '1' );
     Vertex* V2 = CreateVertex( '2' );
     Vertex* V3 = CreateVertex( '3' );
     Vertex* V4 = CreateVertex( '4' );
     Vertex* V5 = CreateVertex( '5' );
 
-    /*  ±×·¡ÇÁ¿¡ Á¤Á¡À» Ãß°¡ */
+    /*  ê·¸ë˜í”„ì— ì •ì ì„ ì¶”ê°€ */
     AddVertex( G, V1 );
     AddVertex( G, V2 );
     AddVertex( G, V3 );
     AddVertex( G, V4 );
     AddVertex( G, V5 );
 
-    /*  Á¤Á¡°ú Á¤Á¡À» °£¼±À¸·Î ÀÕ±â */
+    /*  ì •ì ê³¼ ì •ì ì„ ê°„ì„ ìœ¼ë¡œ ì‡ê¸° */
     AddEdge( V1, CreateEdge(V1, V2, 0) );
     AddEdge( V1, CreateEdge(V1, V3, 0) );
     AddEdge( V1, CreateEdge(V1, V4, 0) );
@@ -41,7 +41,7 @@ int main( void )
 
     PrintGraph( G );
 
-    /*  ±×·¡ÇÁ ¼Ò¸ê */
+    /*  ê·¸ë˜í”„ ì†Œë©¸ */
     DestroyGraph( G );
 
     return 0;

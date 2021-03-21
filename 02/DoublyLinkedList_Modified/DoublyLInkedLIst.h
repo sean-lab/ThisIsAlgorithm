@@ -13,7 +13,7 @@ typedef struct tagNode
     struct tagNode* NextNode;
 } Node;
 
-/* ÇÔ¼ö ¿øÇü ¼±¾ğ */
+/* í•¨ìˆ˜ ì›í˜• ì„ ì–¸ */
 Node* DLL_CreateNode( ElementType NewData );
 void  DLL_DestroyNode( Node* Node);
 void  DLL_AppendNode( Node** Head, Node* NewNode );

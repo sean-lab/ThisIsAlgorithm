@@ -22,7 +22,7 @@ int main( void )
     int* CoinUnits = NULL;
     int* Change    = NULL;
     
-    printf("µ¿ÀüÀÇ °¡Áş¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä :"); 
+    printf("ë™ì „ì˜ ê°€ì§“ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” :"); 
     scanf( "%d", &UnitCount );
 
     CoinUnits = (int*) malloc( sizeof(int) * UnitCount );
@@ -30,16 +30,16 @@ int main( void )
 
     for ( i=0; i<UnitCount; i++ )
     {
-        printf("[%d] ¹øÂ° µ¿ÀüÀÇ ´ÜÀ§¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ", i );
+        printf("[%d] ë²ˆì§¸ ë™ì „ì˜ ë‹¨ìœ„ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ", i );
         scanf( "%d", &CoinUnits[i] );
     }
 
     qsort( CoinUnits, UnitCount, sizeof(int), Compare );
 
-    printf("¹°°Ç °¡°İÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+    printf("ë¬¼ê±´ ê°€ê²©ì„ ì…ë ¥í•˜ì„¸ìš” : ");
     scanf( "%d", &Price );
 
-    printf("¼Õ´ÔÀÌ ÁöºÒÇÑ µ·Àº ¾ó¸¶ÀÔ´Ï±î? : ");
+    printf("ì†ë‹˜ì´ ì§€ë¶ˆí•œ ëˆì€ ì–¼ë§ˆì…ë‹ˆê¹Œ? : ");
     scanf( "%d", &Pay );
 
     GetChange( Price, Pay, CoinUnits, Change, UnitCount );

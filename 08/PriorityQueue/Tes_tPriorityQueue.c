@@ -2,7 +2,7 @@
 
 void PrintNode( PQNode* Node )
 {
-    printf("ÀÛ¾÷¸í : %s (¿ì¼±¼øÀ§:%d)\n", Node->Data, Node->Priority);
+    printf("ìž‘ì—…ëª… : %s (ìš°ì„ ìˆœìœ„:%d)\n", Node->Data, Node->Priority);
 }
 
 int main( void )
@@ -12,12 +12,12 @@ int main( void )
 
     PQNode Nodes[7] = 
     {
-        {34, (void*)"ÄÚµù"},
-        {12, (void*)"°í°´¹ÌÆÃ"},
-        {87, (void*)"Ä¿ÇÇÅ¸±â"},        
-        {45, (void*)"¹®¼­ÀÛ¼º"},
-        {35, (void*)"µð¹ö±ë"},
-        {66, (void*)"ÀÌ´Û±â"}
+        {34, (void*)"ì½”ë”©"},
+        {12, (void*)"ê³ ê°ë¯¸íŒ…"},
+        {87, (void*)"ì»¤í”¼íƒ€ê¸°"},        
+        {45, (void*)"ë¬¸ì„œìž‘ì„±"},
+        {35, (void*)"ë””ë²„ê¹…"},
+        {66, (void*)"ì´ë‹¦ê¸°"}
     };
     
     PQ_Enqueue(PQ, Nodes[0] );
@@ -27,7 +27,7 @@ int main( void )
     PQ_Enqueue(PQ, Nodes[4] );
     PQ_Enqueue(PQ, Nodes[5]);
 
-    printf( "Å¥¿¡ ³²¾Æ ÀÖ´Â ÀÛ¾÷ÀÇ ¼ö : %d\n", PQ->UsedSize );
+    printf( "íì— ë‚¨ì•„ ìžˆëŠ” ìž‘ì—…ì˜ ìˆ˜ : %d\n", PQ->UsedSize );
     
     while ( !PQ_IsEmpty ( PQ ) )
     {

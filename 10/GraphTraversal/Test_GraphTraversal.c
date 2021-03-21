@@ -22,7 +22,7 @@ int main( void )
     AddVertex( graph, V6 );
     AddVertex( graph, V7 );
 
-    /*  Á¤Á¡°ú Á¤Á¡À» °£¼±À¸·Î ÀÕ±â */
+    /*  ì •ì ê³¼ ì •ì ì„ ê°„ì„ ìœ¼ë¡œ ì‡ê¸° */
     AddEdge( V1, CreateEdge(V1, V2, 0) );
     AddEdge( V1, CreateEdge(V1, V3, 0) );
 
@@ -44,14 +44,14 @@ int main( void )
 
     if ( Mode == 0  ) 
     {
-        /*  ±íÀÌ ¿ì¼± Å½»ö */
+        /*  ê¹Šì´ ìš°ì„  íƒìƒ‰ */
         DFS( graph->Vertices );
     }
     else
     {
         LinkedQueue* Queue = LQ_CreateQueue();
     
-        /*  ³Êºñ ¿ì¼± Å½»ö */
+        /*  ë„ˆë¹„ ìš°ì„  íƒìƒ‰ */
         BFS(V1, Queue);
         
         LQ_DestroyQueue( Queue );

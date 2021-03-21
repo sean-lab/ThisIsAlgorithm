@@ -6,7 +6,7 @@ typedef struct tagScore
 
 Score DataSet[] =
 {
-    /*  ¹øÈ£, Á¡¼ö , */
+    /*  ë²ˆí˜¸, ì ìˆ˜ , */
     1    ,    877.88,
     2    ,    176.23,
     3    ,    365.92,

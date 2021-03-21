@@ -2,23 +2,23 @@
 
 void  AS_CreateStack(ArrayStack** Stack, int Capacity)
 {
-    /*  ½ºÅÃÀ» ÀÚÀ¯ÀúÀå¼Ò¿¡ »ý¼º */
+    /*  ìŠ¤íƒì„ ìžìœ ì €ìž¥ì†Œì— ìƒì„± */
     (*Stack)           = (ArrayStack*)malloc(sizeof(ArrayStack));
 
-    /*  ÀÔ·ÂµÈ Capacity¸¸Å­ÀÇ ³ëµå¸¦ ÀÚÀ¯ÀúÀå¼Ò¿¡ »ý¼º */
+    /*  ìž…ë ¥ëœ Capacityë§Œí¼ì˜ ë…¸ë“œë¥¼ ìžìœ ì €ìž¥ì†Œì— ìƒì„± */
     (*Stack)->Nodes    = (Node*)malloc(sizeof(Node)*Capacity);
 
-    /*  Capacity ¹× Top ÃÊ±âÈ­ */
+    /*  Capacity ë° Top ì´ˆê¸°í™” */
     (*Stack)->Capacity = Capacity;
     (*Stack)->Top = 0;
 }
 
 void AS_DestroyStack(ArrayStack* Stack)
 {
-    /*  ³ëµå¸¦ ÀÚÀ¯ ÀúÀå¼Ò¿¡¼­ ÇØÁ¦ */
+    /*  ë…¸ë“œë¥¼ ìžìœ  ì €ìž¥ì†Œì—ì„œ í•´ì œ */
     free(Stack->Nodes);
 
-    /*  ½ºÅÃÀ» ÀÚÀ¯ ÀúÀå¼Ò¿¡¼­ ÇØÁ¦ */
+    /*  ìŠ¤íƒì„ ìžìœ  ì €ìž¥ì†Œì—ì„œ í•´ì œ */
     free(Stack);
 }
 

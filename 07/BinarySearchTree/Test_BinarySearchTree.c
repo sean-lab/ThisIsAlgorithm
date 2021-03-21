@@ -2,11 +2,11 @@
 
 int main( void )
 {
-    /*  ³ëµå »ý¼º */
+    /*  ë…¸ë“œ ìƒì„± */
     BSTNode* Tree = BST_CreateNode(123);
     BSTNode* Node = NULL;
 
-    /*  Æ®¸®¿¡ ³ëµå Ãß°¡ */
+    /*  íŠ¸ë¦¬ì— ë…¸ë“œ ì¶”ê°€ */
     BST_InsertNode( Tree, BST_CreateNode(22) );
     BST_InsertNode( Tree, BST_CreateNode(9918) );
     BST_InsertNode( Tree, BST_CreateNode(424) );
@@ -24,13 +24,13 @@ int main( void )
     if(Node != NULL)
         printf("%d \n", Node->Data);
     else
-        puts("±×·± ³ëµå ¾ø¾î¿ä");
+        puts("ê·¸ëŸ° ë…¸ë“œ ì—†ì–´ìš”");
 
-    /*  Æ®¸® Ãâ·Â */
+    /*  íŠ¸ë¦¬ ì¶œë ¥ */
     BST_InorderPrintTree( Tree );
     printf( "\n");
 
-    /*  Æ¯Á¤ ³ëµå »èÁ¦ */
+    /*  íŠ¹ì • ë…¸ë“œ ì‚­ì œ */
     printf( "Removing 98...\n");
 
     Node = BST_RemoveNode( Tree, NULL, 98 );
@@ -39,14 +39,14 @@ int main( void )
     BST_InorderPrintTree( Tree );
     printf( "\n");
 
-    /*  »õ ³ëµå »ðÀÔ */
+    /*  ìƒˆ ë…¸ë“œ ì‚½ìž… */
     printf( "Inserting 111...\n");
 
     BST_InsertNode( Tree, BST_CreateNode(111) );
     BST_InorderPrintTree( Tree );
     printf( "\n");
 
-    /*  Æ®¸® ¼Ò¸ê½ÃÅ°±â */
+    /*  íŠ¸ë¦¬ ì†Œë©¸ì‹œí‚¤ê¸° */
     BST_DestroyTree( Tree );
 
     return 0;

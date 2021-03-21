@@ -43,10 +43,10 @@ int main( void )
     int i = 0;
     Score* found = NULL;
  
-    /*  Á¡¼öÀÇ ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä */
+    /*  ì ìˆ˜ì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ */
     qsort( (void*)DataSet, Length, sizeof (Score), CompareScore );
 
-    /*  671.78 Á¡À» ¹ÞÀº ÇÐ»ý Ã£±â */
+    /*  671.78 ì ì„ ë°›ì€ í•™ìƒ ì°¾ê¸° */
     found = BinarySearch( DataSet, Length, 671.78 );
 
     printf("found: %d %f \n", found->number, found->score );

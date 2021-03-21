@@ -6,10 +6,10 @@ int main( void )
     Node* SortedList  = NULL;
     Node* CurrentNode = NULL;
 
-    /*  ±×·¡ÇÁ »ý¼º     */
+    /*  ê·¸ëž˜í”„ ìƒì„±     */
     Graph* graph = CreateGraph();
     
-    /*  Á¤Á¡ »ý¼º */
+    /*  ì •ì  ìƒì„± */
     
     Vertex* A = CreateVertex( 'A' );
     Vertex* B = CreateVertex( 'B' );
@@ -20,7 +20,7 @@ int main( void )
     Vertex* G = CreateVertex( 'G' );
     Vertex* H = CreateVertex( 'H' );
     
-    /*  ±×·¡ÇÁ¿¡ Á¤Á¡À» Ãß°¡ */
+    /*  ê·¸ëž˜í”„ì— ì •ì ì„ ì¶”ê°€ */
     AddVertex( graph, A );
     AddVertex( graph, B );
     AddVertex( graph, C );
@@ -30,7 +30,7 @@ int main( void )
     AddVertex( graph, G );
     AddVertex( graph, H );
 
-    /*  Á¤Á¡°ú Á¤Á¡À» °£¼±À¸·Î ÀÕ±â */
+    /*  ì •ì ê³¼ ì •ì ì„ ê°„ì„ ìœ¼ë¡œ ìž‡ê¸° */
     AddEdge( A, CreateEdge( A, C, 0 ) );
     AddEdge( A, CreateEdge( A, D, 0 ) );
 
@@ -48,7 +48,7 @@ int main( void )
     
     AddEdge( G, CreateEdge( G, H, 0 ) );
 
-    /*  À§»ó Á¤·Ä */
+    /*  ìœ„ìƒ ì •ë ¬ */
     TopologicalSort( graph->Vertices, &SortedList );
 
  
@@ -64,7 +64,7 @@ int main( void )
     printf("\n");
     
 
-    /*  ±×·¡ÇÁ ¼Ò¸ê */
+    /*  ê·¸ëž˜í”„ ì†Œë©¸ */
     DestroyGraph( graph );
 
     return 0;

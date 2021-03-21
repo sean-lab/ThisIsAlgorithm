@@ -2,7 +2,7 @@
 
 int main( void )
 {
-    /*  ³ëµå »ı¼º */
+    /*  ë…¸ë“œ ìƒì„± */
     LCRSNode* Root = LCRS_CreateNode('A');
     
     LCRSNode* B = LCRS_CreateNode('B');
@@ -16,7 +16,7 @@ int main( void )
     LCRSNode* J = LCRS_CreateNode('J');
     LCRSNode* K = LCRS_CreateNode('K');
 
-    /*  Æ®¸®¿¡ ³ëµå Ãß°¡ */
+    /*  íŠ¸ë¦¬ì— ë…¸ë“œ ì¶”ê°€ */
     LCRS_AddChildNode( Root, B );
         LCRS_AddChildNode( B, C );
         LCRS_AddChildNode( B, D );
@@ -30,10 +30,10 @@ int main( void )
         LCRS_AddChildNode( I, J );
             LCRS_AddChildNode( J, K );
     
-    /*  Æ®¸® Ãâ·Â */
+    /*  íŠ¸ë¦¬ ì¶œë ¥ */
     LCRS_PrintTree( Root, 0 );
 
-    /*  Æ®¸® ¼Ò¸ê½ÃÅ°±â */
+    /*  íŠ¸ë¦¬ ì†Œë©¸ì‹œí‚¤ê¸° */
     LCRS_DestroyTree( Root );
 
     return 0;

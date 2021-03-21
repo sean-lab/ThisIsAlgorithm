@@ -32,7 +32,7 @@ void  HEAP_Insert( Heap* H, ElementType NewData )
 
     H->Nodes[CurrentPosition].Data = NewData;
 
-    /*  ÈÄ¼Ó Ã³¸®. */
+    /*  í›„ì† ì²˜ë¦¬. */
     while ( CurrentPosition > 0 
         && H->Nodes[CurrentPosition].Data < H->Nodes[ParentPosition].Data )
     {

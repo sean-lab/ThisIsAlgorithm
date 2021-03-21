@@ -8,11 +8,11 @@
 #define MAX_BUFFER 1024
 #define INIT_VALUE -1
 
-#define START    'S'    /* ½ÃÀÛÁ¡ */
-#define GOAL     'G'    /* Å»Ãâ±¸ */
-#define WAY      ' '    /* ±æ */
-#define WALL     '#'    /* º® */
-#define MARKED   '+'    /* Å»Ãâ±¸·Î ÇâÇÏ´Â ±æ Ç¥½Ä */
+#define START    'S'    /* ì‹œì‘ì  */
+#define GOAL     'G'    /* íƒˆì¶œêµ¬ */
+#define WAY      ' '    /* ê¸¸ */
+#define WALL     '#'    /* ë²½ */
+#define MARKED   '+'    /* íƒˆì¶œêµ¬ë¡œ í–¥í•˜ëŠ” ê¸¸ í‘œì‹ */
 
 
 enum DIRECTION { NORTH, SOUTH, EAST, WEST };

@@ -2,7 +2,7 @@
 
 int main( void )
 {
-    /*  ³ëµå »ý¼º */
+    /*  ë…¸ë“œ ìƒì„± */
     SBTNode* A = SBT_CreateNode('A');
     SBTNode* B = SBT_CreateNode('B');
     SBTNode* C = SBT_CreateNode('C');
@@ -11,7 +11,7 @@ int main( void )
     SBTNode* F = SBT_CreateNode('F');
     SBTNode* G = SBT_CreateNode('G');
     
-    /*  Æ®¸®¿¡ ³ëµå Ãß°¡ */
+    /*  íŠ¸ë¦¬ì— ë…¸ë“œ ì¶”ê°€ */
     A->Left  = B;
     B->Left  = C;
     B->Right = D;
@@ -20,7 +20,7 @@ int main( void )
     E->Left  = F;
     E->Right = G;
     
-    /*  Æ®¸® Ãâ·Â */
+    /*  íŠ¸ë¦¬ ì¶œë ¥ */
     printf("Preorder ...\n");
     SBT_PreorderPrintTree( A );
     printf("\n\n");
@@ -33,7 +33,7 @@ int main( void )
     SBT_PostorderPrintTree( A );
     printf("\n");
 
-    /*  Æ®¸® ¼Ò¸ê½ÃÅ°±â */
+    /*  íŠ¸ë¦¬ ì†Œë©¸ì‹œí‚¤ê¸° */
     SBT_DestroyTree( A );
 
     return 0;

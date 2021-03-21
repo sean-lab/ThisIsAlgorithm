@@ -22,10 +22,10 @@ int main( void )
     Score  target;
     Score* found  = NULL;
  
-    /*  Á¡¼öÀÇ ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä */
+    /*  ì ìˆ˜ì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ */
     qsort( (void*)DataSet, Length, sizeof (Score), CompareScore );
 
-    /*  671.78 Á¡À» ¹ŞÀº ÇĞ»ı Ã£±â */
+    /*  671.78 ì ì„ ë°›ì€ í•™ìƒ ì°¾ê¸° */
     target.number = 0;
     target.score  = 671.78;
 

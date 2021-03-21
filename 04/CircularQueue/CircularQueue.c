@@ -2,10 +2,10 @@
 
 void  CQ_CreateQueue( CircularQueue** Queue, int Capacity)
 {
-    /*  Å¥¸¦ ÀÚÀ¯ÀúÀå¼Ò¿¡ »ı¼º */
+    /*  íë¥¼ ììœ ì €ì¥ì†Œì— ìƒì„± */
     (*Queue )           = ( CircularQueue*)malloc(sizeof( CircularQueue ));
 
-    /*  ÀÔ·ÂµÈ Capacity+1 ¸¸Å­ÀÇ ³ëµå¸¦ ÀÚÀ¯ÀúÀå¼Ò¿¡ »ı¼º */
+    /*  ì…ë ¥ëœ Capacity+1 ë§Œí¼ì˜ ë…¸ë“œë¥¼ ììœ ì €ì¥ì†Œì— ìƒì„± */
     (*Queue )->Nodes    = (Node*)malloc(sizeof(Node )* ( Capacity+1) );
 
     (*Queue )->Capacity = Capacity;

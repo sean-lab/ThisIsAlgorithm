@@ -2,10 +2,10 @@
 #include <stdio.h> 
 #include <string.h> 
   
-/*  ¸®ֵֿ°×ְּ 
-    < 0 ְּ¸י, _elem1ְּ _elem2÷¸´Ù ְÛ´Ù. 
-    0   ְּ¸י, _elem1ְּ _elem2¿ֽ °°´Ù.  
-    > 0 ְּ¸י, _elem1ְּ _elem2÷¸´Ù ֵ©´Ù.  */
+/*  כ¦¬ם„´ך°’ל´ 
+    < 0 ל´כ©´, _elem1ל´ _elem2כ³´כ‹₪ ל‘כ‹₪. 
+    0   ל´כ©´, _elem1ל´ _elem2ל™€ ך°™כ‹₪.  
+    > 0 ל´כ©´, _elem1ל´ _elem2כ³´כ‹₪ ם¬כ‹₪.  */
 int CompareScore( const void *_elem1, const void *_elem2 ) 
 { 
     int* elem1 = (int*)_elem1; 
