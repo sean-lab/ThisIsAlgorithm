@@ -2,7 +2,7 @@
 
 int main( void )
 {
-    /*  노드 생성 */
+    //  노드 생성 
     LCRSNode* Root = LCRS_CreateNode('A');
     
     LCRSNode* B = LCRS_CreateNode('B');
@@ -16,7 +16,7 @@ int main( void )
     LCRSNode* J = LCRS_CreateNode('J');
     LCRSNode* K = LCRS_CreateNode('K');
 
-    /*  트리에 노드 추가 */
+    //  트리에 노드 추가 
     LCRS_AddChildNode( Root, B );
         LCRS_AddChildNode( B, C );
         LCRS_AddChildNode( B, D );
@@ -30,10 +30,10 @@ int main( void )
         LCRS_AddChildNode( I, J );
             LCRS_AddChildNode( J, K );
     
-    /*  트리 출력 */
+    //  트리 출력 
     LCRS_PrintTree( Root, 0 );
 
-    /*  트리 소멸시키기 */
+    //  트리 소멸시키기 
     LCRS_DestroyTree( Root );
 
     return 0;

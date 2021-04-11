@@ -26,7 +26,7 @@ void BFS( Vertex* V, LinkedQueue* Queue )
     printf("%d ", V->Data);
     V->Visited = Visited;
     
-    /*  큐에 노드 삽입. */
+    //  큐에 노드 삽입. 
     LQ_Enqueue( &Queue, LQ_CreateNode( V ) );
 
     while ( !LQ_IsEmpty( Queue ) )

@@ -8,7 +8,7 @@ int main( void )
     CHT_Set( HT, "JAVA",   "Sun Microsystems");
     CHT_Set( HT, "REDH",   "Red Hat Linux");
     CHT_Set( HT, "APAC",   "Apache Org");
-    CHT_Set( HT, "ZYMZZ",  "Unisys Ops Check"); /*  APAC와 충돌 */
+    CHT_Set( HT, "ZYMZZ",  "Unisys Ops Check"); //  APAC와 충돌 
     CHT_Set( HT, "IBM",    "IBM Ltd.");
     CHT_Set( HT, "ORCL",   "Oracle Corporation");
     CHT_Set( HT, "CSCO",   "Cisco Systems, Inc.");

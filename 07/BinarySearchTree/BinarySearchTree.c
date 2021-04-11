@@ -84,11 +84,11 @@ BSTNode* BST_RemoveNode( BSTNode* Tree,BSTNode* Parent, ElementType Target )
         Removed = BST_RemoveNode( Tree->Left, Tree, Target );
     else if ( Tree->Data < Target )
         Removed = BST_RemoveNode( Tree->Right, Tree, Target );
-    else /*  목표 값을 찾은 경우. */
+    else //  목표 값을 찾은 경우. 
     {
         Removed = Tree;
 
-        /*  잎 노드인 경우 바로 삭제 */
+        //  잎 노드인 경우 바로 삭제 
         if ( Tree->Left == NULL && Tree->Right == NULL )
         {
             if ( Parent->Left == Tree )
@@ -98,17 +98,17 @@ BSTNode* BST_RemoveNode( BSTNode* Tree,BSTNode* Parent, ElementType Target )
         }
         else
         {
-            /*  자식이 양쪽 다 있는 경우 */
+            //  자식이 양쪽 다 있는 경우 
             if ( Tree->Left != NULL && Tree->Right != NULL ) 
             {
-                /*  최소값 노드를 찾아 제거한 뒤 현재의 노드에 위치시킨다. */
+                //  최소값 노드를 찾아 제거한 뒤 현재의 노드에 위치시킨다. 
                 BSTNode* MinNode = BST_SearchMinNode( Tree->Right );
                 MinNode = BST_RemoveNode( Tree, NULL, MinNode->Data );
                 Tree->Data = MinNode->Data;
             }
             else
             {
-                /*  자식이 하나만 있는 경우 */
+                //  자식이 하나만 있는 경우 
                 BSTNode* Temp = NULL;
                 if ( Tree->Left != NULL )
                     Temp = Tree->Left;
@@ -131,12 +131,12 @@ void BST_InorderPrintTree( BSTNode* Node )
     if ( Node == NULL )
         return;
 
-    /*  왼쪽 하위 트리 출력 */
+    //  왼쪽 하위 트리 출력 
     BST_InorderPrintTree( Node->Left );
 
-    /*  루트 노드 출력 */
+    //  루트 노드 출력 
     printf( "%d ", Node->Data );
 
-    /*  오른쪽 하위 트리 출력 */
+    //  오른쪽 하위 트리 출력 
     BST_InorderPrintTree( Node->Right );
 }

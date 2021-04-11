@@ -69,14 +69,14 @@ void ET_BuildExpressionTree( char* PostfixExpression, ETNode** Node )
 
     switch ( Token ) 
     {
-        /*  연산자인 경우 */
+        //  연산자인 경우 
         case '+': case '-': case '*': case '/':
             (*Node) = ET_CreateNode( Token );
             ET_BuildExpressionTree( PostfixExpression, &(*Node)->Right );
             ET_BuildExpressionTree( PostfixExpression, &(*Node)->Left  );
             break;
 
-        /*  피연산자인 경우 */
+        //  피연산자인 경우 
         default :
             (*Node) = ET_CreateNode( Token);
             break;
@@ -96,7 +96,7 @@ double ET_Evaluate( ETNode* Tree )
 
     switch ( Tree->Data ) 
     {
-        /*  연산자인 경우 */
+        //  연산자인 경우 
         case '+': case '-': case '*': case '/':
             Left  = ET_Evaluate( Tree->Left );
             Right = ET_Evaluate( Tree->Right );
@@ -108,7 +108,7 @@ double ET_Evaluate( ETNode* Tree )
 
             break;
 
-        /*  피연산자인 경우 */
+        //  피연산자인 경우 
         default :
             memset(Temp, 0, sizeof(Temp));
             Temp[0] = Tree->Data;

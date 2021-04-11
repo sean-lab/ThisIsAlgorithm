@@ -174,7 +174,7 @@ void Huffman_Decode( HuffmanNode* Tree, BitBuffer* Encoded, UCHAR* Decoded )
 
     for ( i=0; i<=Encoded->Size; i++ )
     {
-        UCHAR Mask = 0x80; /*  1000 0000 */
+        UCHAR Mask = 0x80; //  1000 0000 
         
         if ( Current->Left == NULL && Current->Right == NULL )
         {
@@ -199,7 +199,7 @@ void Huffman_PrintBinary( BitBuffer* Buffer )
 
     for ( i=0; i<Buffer->Size; i++ )
     {
-        UCHAR Mask = 0x80; /*  1000 0000 */
+        UCHAR Mask = 0x80; //  1000 0000 
         Mask >>= i % 8;
 
         printf("%d", (Buffer->Buffer[i/8] & Mask) == Mask );

@@ -4,12 +4,12 @@
 int main( void )
 {
     
-    /*  그래프 생성     */
+    //  그래프 생성     
     Graph* graph      = CreateGraph();
     Graph* PrimMST    = CreateGraph();
     Graph* KruskalMST = CreateGraph();
    
-    /*  정점 생성 */
+    //  정점 생성 
     Vertex* A = CreateVertex( 'A' );
     Vertex* B = CreateVertex( 'B' );
     Vertex* C = CreateVertex( 'C' );
@@ -20,7 +20,7 @@ int main( void )
     Vertex* H = CreateVertex( 'H' );
     Vertex* I = CreateVertex( 'I' );
 
-    /*  그래프에 정점을 추가 */
+    //  그래프에 정점을 추가 
     AddVertex( graph, A );
     AddVertex( graph, B );
     AddVertex( graph, C );
@@ -31,7 +31,7 @@ int main( void )
     AddVertex( graph, H );
     AddVertex( graph, I );
 
-    /*  정점과 정점을 간선으로 잇기 */
+    //  정점과 정점을 간선으로 잇기 
     AddEdge( A, CreateEdge(A, B, 35) );
     AddEdge( A, CreateEdge(A, E, 247) );
     
@@ -65,7 +65,7 @@ int main( void )
 
     AddEdge( I, CreateEdge(I, G, 106 ) );
     
-    /*  정점 B를 시작 정점으로 하는 최소 신장 트리. */
+    //  정점 B를 시작 정점으로 하는 최소 신장 트리. 
     printf("Prim's Algorithm\n");
     Prim(graph, B, PrimMST);
     PrintGraph ( PrimMST );
@@ -74,7 +74,7 @@ int main( void )
     Kruskal(graph, KruskalMST);
     PrintGraph ( KruskalMST );
     
-    /*  그래프 소멸 */
+    //  그래프 소멸 
     DestroyGraph( PrimMST );
     DestroyGraph( KruskalMST );
     DestroyGraph( graph );

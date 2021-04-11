@@ -32,7 +32,7 @@ void  HEAP_Insert( Heap* H, ElementType NewData )
 
     H->Nodes[CurrentPosition].Data = NewData;
 
-    /*  후속 처리. */
+    //  후속 처리. 
     while ( CurrentPosition > 0 
         && H->Nodes[CurrentPosition].Data < H->Nodes[ParentPosition].Data )
     {

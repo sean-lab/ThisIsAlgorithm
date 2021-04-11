@@ -2,7 +2,7 @@
 
 void  LQ_CreateQueue( LinkedQueue** Queue )
 {
-    /*  큐를 자유저장소에 생성 */
+    //  큐를 자유저장소에 생성 
     (*Queue )        = ( LinkedQueue*)malloc(sizeof( LinkedQueue ) );
     (*Queue )->Front = NULL;
     (*Queue )->Rear  = NULL;
@@ -17,7 +17,7 @@ void LQ_DestroyQueue( LinkedQueue* Queue )
         LQ_DestroyNode(Popped);    
     }
 
-    /*  큐를 자유 저장소에서 해제 */
+    //  큐를 자유 저장소에서 해제 
     free( Queue );
 }
 
@@ -26,11 +26,11 @@ Node* LQ_CreateNode( char* NewData )
     Node* NewNode = (Node*)malloc( sizeof( Node ) );
     NewNode->Data = (char*)malloc( strlen( NewData) + 1);
 
-    strcpy(NewNode->Data, NewData);  /*  데이터를 저장한다. */
+    strcpy(NewNode->Data, NewData);  //  데이터를 저장한다. 
 
-    NewNode->NextNode = NULL; /*  다음 노드에 대한 포인터는 NULL로 초기화 한다. */
+    NewNode->NextNode = NULL; //  다음 노드에 대한 포인터는 NULL로 초기화 한다. 
 
-    return NewNode;/*  노드의 주소를 반환한다. */
+    return NewNode;//  노드의 주소를 반환한다. 
 }
 
 void  LQ_DestroyNode(Node* _Node )
@@ -57,7 +57,7 @@ void LQ_Enqueue( LinkedQueue* Queue, Node* NewNode )
 
 Node* LQ_Dequeue( LinkedQueue* Queue )
 {
-    /*  LQ_Dequeue() 함수가 반환할 최상위 노드 */
+    //  LQ_Dequeue() 함수가 반환할 최상위 노드 
     Node* Front = Queue->Front;
 
     if ( Queue->Front->NextNode == NULL )

@@ -53,7 +53,7 @@ void BuildBCT( char* Pattern, int PatternSize, int* BCT )
 
 void BuildGST( char* Pattern, int PatternSize, int* Suffix, int* GST )
 {
-    /*  Case 1 */
+    //  Case 1 
     int i = PatternSize;
     int j = PatternSize + 1;
 
@@ -75,7 +75,7 @@ void BuildGST( char* Pattern, int PatternSize, int* Suffix, int* GST )
         Suffix[i] = j;
     }
 
-    /*  Case 2 */
+    //  Case 2 
     j = Suffix[0];
 
     for ( i = 0; i <= PatternSize; i++ )

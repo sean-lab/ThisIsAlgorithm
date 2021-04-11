@@ -78,14 +78,14 @@ void OAHT_ClearElement( ElementType* Element )
 
 void OAHT_DestroyHashTable( HashTable* HT)
 {
-    /*  1. 각 링크드 리스트를 자유 저장소에서 제거하기 */
+    //  1. 각 링크드 리스트를 자유 저장소에서 제거하기 
     int i = 0;
     for ( i=0; i<HT->TableSize; i++ )
     {
         OAHT_ClearElement( &(HT->Table[i]) );
     }
 
-    /*  2, 해시 테이블을 자유 저장소에서 제거하기. */
+    //  2, 해시 테이블을 자유 저장소에서 제거하기. 
     free ( HT->Table );
     free ( HT );
 }
@@ -125,12 +125,12 @@ void OAHT_Rehash( HashTable** HT )
     int i = 0;
     ElementType* OldTable = (*HT)->Table;
 
-    /*  새 해시 테이블을 만들고, */
+    //  새 해시 테이블을 만들고, 
     HashTable* NewHT = OAHT_CreateHashTable( (*HT)->TableSize * 2 );
     
     printf("\nRehashed. New table size is : %d\n\n", NewHT->TableSize );
 
-    /*  이전의 해시테이블에 있던 데이터를 새 해시테이블로 옮긴다. */
+    //  이전의 해시테이블에 있던 데이터를 새 해시테이블로 옮긴다. 
     for ( i=0; i<(*HT)->TableSize; i++ )
     {
         if ( OldTable[i].Status == OCCUPIED )
@@ -139,9 +139,9 @@ void OAHT_Rehash( HashTable** HT )
         }
     }
 
-    /*  이전의 해시테이블은 소멸시킨다. */
+    //  이전의 해시테이블은 소멸시킨다. 
     OAHT_DestroyHashTable( (*HT) );
 
-    /*  HT 포인터에는 새로 해시테이블의 주소를 대입한다. */
+    //  HT 포인터에는 새로 해시테이블의 주소를 대입한다. 
     (*HT) = NewHT;
 }

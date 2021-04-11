@@ -22,7 +22,7 @@ int main( void )
     AddVertex( graph, V6 );
     AddVertex( graph, V7 );
 
-    /*  정점과 정점을 간선으로 잇기 */
+    //  정점과 정점을 간선으로 잇기 
     AddEdge( V1, CreateEdge(V1, V2, 0) );
     AddEdge( V1, CreateEdge(V1, V3, 0) );
 
@@ -44,14 +44,14 @@ int main( void )
 
     if ( Mode == 0  ) 
     {
-        /*  깊이 우선 탐색 */
+        //  깊이 우선 탐색 
         DFS( graph->Vertices );
     }
     else
     {
         LinkedQueue* Queue = LQ_CreateQueue();
     
-        /*  너비 우선 탐색 */
+        //  너비 우선 탐색 
         BFS(V1, Queue);
         
         LQ_DestroyQueue( Queue );

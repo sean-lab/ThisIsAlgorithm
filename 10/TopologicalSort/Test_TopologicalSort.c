@@ -6,10 +6,10 @@ int main( void )
     Node* SortedList  = NULL;
     Node* CurrentNode = NULL;
 
-    /*  그래프 생성     */
+    //  그래프 생성     
     Graph* graph = CreateGraph();
     
-    /*  정점 생성 */
+    //  정점 생성 
     
     Vertex* A = CreateVertex( 'A' );
     Vertex* B = CreateVertex( 'B' );
@@ -20,7 +20,7 @@ int main( void )
     Vertex* G = CreateVertex( 'G' );
     Vertex* H = CreateVertex( 'H' );
     
-    /*  그래프에 정점을 추가 */
+    //  그래프에 정점을 추가 
     AddVertex( graph, A );
     AddVertex( graph, B );
     AddVertex( graph, C );
@@ -30,7 +30,7 @@ int main( void )
     AddVertex( graph, G );
     AddVertex( graph, H );
 
-    /*  정점과 정점을 간선으로 잇기 */
+    //  정점과 정점을 간선으로 잇기 
     AddEdge( A, CreateEdge( A, C, 0 ) );
     AddEdge( A, CreateEdge( A, D, 0 ) );
 
@@ -48,7 +48,7 @@ int main( void )
     
     AddEdge( G, CreateEdge( G, H, 0 ) );
 
-    /*  위상 정렬 */
+    //  위상 정렬 
     TopologicalSort( graph->Vertices, &SortedList );
 
  
@@ -64,7 +64,7 @@ int main( void )
     printf("\n");
     
 
-    /*  그래프 소멸 */
+    //  그래프 소멸 
     DestroyGraph( graph );
 
     return 0;

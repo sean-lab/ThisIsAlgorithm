@@ -1,6 +1,6 @@
 #include "CircularDoublyLinkedList.h"
 
-/*  노드 생성 */
+//  노드 생성 
 Node* CDLL_CreateNode(ElementType NewData)
 {
     Node* NewNode = (Node*)malloc(sizeof(Node));
@@ -12,16 +12,16 @@ Node* CDLL_CreateNode(ElementType NewData)
     return NewNode;
 }
 
-/*  노드 소멸 */
+//  노드 소멸 
 void CDLL_DestroyNode(Node* Node)
 {
     free(Node);
 }
 
-/*  노드 추가 */
+//  노드 추가 
 void CDLL_AppendNode(Node** Head, Node* NewNode)
 {
-    /*  헤드 노드가 NULL이라면 새로운 노드가 Head */
+    //  헤드 노드가 NULL이라면 새로운 노드가 Head 
     if ( (*Head) == NULL ) 
     {
         *Head = NewNode;
@@ -30,19 +30,19 @@ void CDLL_AppendNode(Node** Head, Node* NewNode)
     } 
     else
     {
-        /*  테일과 헤드 사이에 NewNode를 삽입한다. */
+        //  테일과 헤드 사이에 NewNode를 삽입한다. 
         Node* Tail = (*Head)->PrevNode;
         
         Tail->NextNode->PrevNode = NewNode;
         Tail->NextNode = NewNode;
 
         NewNode->NextNode = (*Head);
-        NewNode->PrevNode = Tail; /*  기존의 테일을 새로운  */
-                                  /*  테일의 PrevNode가 가리킨다. */
+        NewNode->PrevNode = Tail; //  기존의 테일을 새로운  
+                                  //  테일의 PrevNode가 가리킨다. 
     }
 }
 
-/*  노드 삽입 */
+//  노드 삽입 
 void CDLL_InsertAfter(Node* Current, Node* NewNode)
 {
     NewNode->NextNode = Current->NextNode;
@@ -55,7 +55,7 @@ void CDLL_InsertAfter(Node* Current, Node* NewNode)
     }
 }
 
-/*  노드 제거 */
+//  노드 제거 
 void CDLL_RemoveNode(Node** Head, Node* Remove)
 {
     if ( *Head == Remove )
@@ -84,7 +84,7 @@ void CDLL_RemoveNode(Node** Head, Node* Remove)
     }    
 }
 
-/*  노드 탐색 */
+//  노드 탐색 
 Node* CDLL_GetNodeAt(Node* Head, int Location)
 {
     Node* Current = Head;
@@ -97,7 +97,7 @@ Node* CDLL_GetNodeAt(Node* Head, int Location)
     return Current;
 }
 
-/*  노드 수 세기 */
+//  노드 수 세기 
 int CDLL_GetNodeCount(Node* Head)
 {
     unsigned int  Count = 0;

@@ -8,7 +8,7 @@ int main( void )
     OAHT_Set( &HT, "JAVA",   "Sun Microsystems");
     OAHT_Set( &HT, "REDH",   "Red Hat Linux");
     OAHT_Set( &HT, "APAC",   "Apache Org");
-    OAHT_Set( &HT, "ZYMZZ",  "Unisys Ops Check"); /*  APAC와 충돌 */
+    OAHT_Set( &HT, "ZYMZZ",  "Unisys Ops Check"); //  APAC와 충돌 
     OAHT_Set( &HT, "IBM",    "IBM Ltd.");
     OAHT_Set( &HT, "ORCL",   "Oracle Corporation");
     OAHT_Set( &HT, "CSCO",   "Cisco Systems, Inc.");

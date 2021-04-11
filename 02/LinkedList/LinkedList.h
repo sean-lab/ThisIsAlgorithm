@@ -12,7 +12,7 @@ typedef struct tagNode
     struct tagNode* NextNode;
 } Node;
 
-/* 함수 원형 선언 */
+// 함수 원형 선언 
 Node* SLL_CreateNode(ElementType NewData);
 void  SLL_DestroyNode(Node* Node);
 void  SLL_AppendNode(Node** Head, Node* NewNode);

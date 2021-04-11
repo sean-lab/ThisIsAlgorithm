@@ -43,10 +43,10 @@ int main( void )
     int i = 0;
     Score* found = NULL;
  
-    /*  점수의 오름차순으로 정렬 */
+    //  점수의 오름차순으로 정렬 
     qsort( (void*)DataSet, Length, sizeof (Score), CompareScore );
 
-    /*  671.78 점을 받은 학생 찾기 */
+    //  671.78 점을 받은 학생 찾기 
     found = BinarySearch( DataSet, Length, 671.78 );
 
     printf("found: %d %f \n", found->number, found->score );

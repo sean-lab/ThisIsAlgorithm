@@ -2,7 +2,7 @@
 
 int main( void )
 {
-    /*  노드 생성 */
+    //  노드 생성 
     SBTNode* A = SBT_CreateNode('A');
     SBTNode* B = SBT_CreateNode('B');
     SBTNode* C = SBT_CreateNode('C');
@@ -11,7 +11,7 @@ int main( void )
     SBTNode* F = SBT_CreateNode('F');
     SBTNode* G = SBT_CreateNode('G');
     
-    /*  트리에 노드 추가 */
+    //  트리에 노드 추가 
     A->Left  = B;
     B->Left  = C;
     B->Right = D;
@@ -20,7 +20,7 @@ int main( void )
     E->Left  = F;
     E->Right = G;
     
-    /*  트리 출력 */
+    //  트리 출력 
     printf("Preorder ...\n");
     SBT_PreorderPrintTree( A );
     printf("\n\n");
@@ -33,7 +33,7 @@ int main( void )
     SBT_PostorderPrintTree( A );
     printf("\n");
 
-    /*  트리 소멸시키기 */
+    //  트리 소멸시키기 
     SBT_DestroyTree( A );
 
     return 0;

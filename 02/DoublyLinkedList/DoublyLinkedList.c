@@ -1,6 +1,6 @@
 #include "DoublyLinkedList.h"
 
-/*  노드 생성 */
+//  노드 생성 
 Node* DLL_CreateNode( ElementType NewData )
 {
     Node* NewNode = (Node*)malloc(sizeof(Node));
@@ -12,23 +12,23 @@ Node* DLL_CreateNode( ElementType NewData )
     return NewNode;
 }
 
-/*  노드 소멸 */
+//  노드 소멸 
 void DLL_DestroyNode( Node* Node )
 {
     free(Node);
 }
 
-/*  노드 추가 */
+//  노드 추가 
 void DLL_AppendNode( Node** Head, Node* NewNode )
 {
-    /*  헤드 노드가 NULL이라면 새로운 노드가 Head */
+    //  헤드 노드가 NULL이라면 새로운 노드가 Head 
     if ( (*Head) == NULL ) 
     {
         *Head = NewNode;
     } 
     else
     {
-        /*  테일을 찾아 NewNode를 연결한다. */
+        //  테일을 찾아 NewNode를 연결한다. 
         Node* Tail = (*Head);
         while ( Tail->NextNode != NULL )
         {
@@ -36,11 +36,11 @@ void DLL_AppendNode( Node** Head, Node* NewNode )
         }
 
         Tail->NextNode = NewNode;
-        NewNode->PrevNode = Tail; /*  기존의 테일을 새로운 테일의 PrevNode가 가리킨다. */
+        NewNode->PrevNode = Tail; //  기존의 테일을 새로운 테일의 PrevNode가 가리킨다. 
     }
 }
 
-/*  노드 삽입 */
+//  노드 삽입 
 void DLL_InsertAfter( Node* Current, Node* NewNode )
 {
     NewNode->NextNode = Current->NextNode;
@@ -53,7 +53,7 @@ void DLL_InsertAfter( Node* Current, Node* NewNode )
     }
 }
 
-/*  노드 제거 */
+//  노드 제거 
 void DLL_RemoveNode( Node** Head, Node* Remove )
 {
     if ( *Head == Remove )
@@ -80,7 +80,7 @@ void DLL_RemoveNode( Node** Head, Node* Remove )
     }    
 }
 
-/*  노드 탐색 */
+//  노드 탐색 
 Node* DLL_GetNodeAt( Node* Head, int Location )
 {
     Node* Current = Head;
@@ -93,7 +93,7 @@ Node* DLL_GetNodeAt( Node* Head, int Location )
     return Current;
 }
 
-/*  노드 수 세기 */
+//  노드 수 세기 
 int DLL_GetNodeCount( Node* Head )
 {
     unsigned int  Count = 0;

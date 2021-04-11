@@ -32,7 +32,7 @@ void  PQ_Enqueue( PriorityQueue* PQ, PQNode NewNode )
 
     PQ->Nodes[CurrentPosition] = NewNode;
 
-    /*  후속 처리. */
+    //  후속 처리. 
     while ( CurrentPosition > 0 
         && PQ->Nodes[CurrentPosition].Priority < PQ->Nodes[ParentPosition].Priority )
     {

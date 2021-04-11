@@ -38,12 +38,12 @@ void CHT_Set( HashTable* HT, KeyType Key, ValueType Value )
     int Address = CHT_Hash( Key, strlen(Key), HT->TableSize );
     Node* NewNode = CHT_CreateNode( Key, Value );
 
-    /*  해당 주소가 비어 있는 경우 */
+    //  해당 주소가 비어 있는 경우 
     if ( HT->Table[Address] == NULL )
     {
         HT->Table[Address] = NewNode;
     } 
-    /*  해당 주소가 비어 있지 않은 경우 */
+    //  해당 주소가 비어 있지 않은 경우 
     else
     {    
         List L = HT->Table[Address];
@@ -56,17 +56,17 @@ void CHT_Set( HashTable* HT, KeyType Key, ValueType Value )
 
 ValueType CHT_Get( HashTable* HT, KeyType Key )
 {
-    /*  주소를 해싱한다. */
+    //  주소를 해싱한다. 
     int Address = CHT_Hash( Key, strlen(Key), HT->TableSize );
 
-    /*  해싱한 주소에 있는 링크드 리스트를 가져온다. */
+    //  해싱한 주소에 있는 링크드 리스트를 가져온다. 
     List TheList = HT->Table[Address];
     List Target  = NULL;
 
     if ( TheList == NULL )
         return NULL;
 
-    /*  원하는 값을 찾을 때까지 순차 탐색. */
+    //  원하는 값을 찾을 때까지 순차 탐색. 
     while ( 1 )
     {
         if ( strcmp( TheList->Key, Key ) == 0 ) 
@@ -97,7 +97,7 @@ void CHT_DestroyList( List L )
 
 void CHT_DestroyHashTable( HashTable* HT)
 {
-    /*  1. 각 링크드 리스트를 자유 저장소에서 제거하기 */
+    //  1. 각 링크드 리스트를 자유 저장소에서 제거하기 
     int i = 0;
     for ( i=0; i<HT->TableSize; i++ )
     {
@@ -106,7 +106,7 @@ void CHT_DestroyHashTable( HashTable* HT)
         CHT_DestroyList( L );    
     }
 
-    /*  2, 해시 테이블을 자유 저장소에서 제거하기. */
+    //  2, 해시 테이블을 자유 저장소에서 제거하기. 
     free ( HT->Table );
     free ( HT );
 }

@@ -22,10 +22,10 @@ int main( void )
     Score  target;
     Score* found  = NULL;
  
-    /*  점수의 오름차순으로 정렬 */
+    //  점수의 오름차순으로 정렬 
     qsort( (void*)DataSet, Length, sizeof (Score), CompareScore );
 
-    /*  671.78 점을 받은 학생 찾기 */
+    //  671.78 점을 받은 학생 찾기 
     target.number = 0;
     target.score  = 671.78;
 

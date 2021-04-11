@@ -2,23 +2,23 @@
 
 void  AS_CreateStack(ArrayStack** Stack, int Capacity)
 {
-    /*  스택을 자유저장소에 생성 */
+    //  스택을 자유저장소에 생성 
     (*Stack)           = (ArrayStack*)malloc(sizeof(ArrayStack));
 
-    /*  입력된 Capacity만큼의 노드를 자유저장소에 생성 */
+    //  입력된 Capacity만큼의 노드를 자유저장소에 생성 
     (*Stack)->Nodes    = (Node*)malloc(sizeof(Node)*Capacity);
 
-    /*  Capacity 및 Top 초기화 */
+    //  Capacity 및 Top 초기화 
     (*Stack)->Capacity = Capacity;
     (*Stack)->Top = 0;
 }
 
 void AS_DestroyStack(ArrayStack* Stack)
 {
-    /*  노드를 자유 저장소에서 해제 */
+    //  노드를 자유 저장소에서 해제 
     free(Stack->Nodes);
 
-    /*  스택을 자유 저장소에서 해제 */
+    //  스택을 자유 저장소에서 해제 
     free(Stack);
 }
 
