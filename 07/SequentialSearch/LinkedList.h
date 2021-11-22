@@ -3,9 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "Graph.h"
 
-typedef Vertex* ElementType;
+typedef int ElementType;
 
 typedef struct tagNode
 {

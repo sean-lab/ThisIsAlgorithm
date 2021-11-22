@@ -3,7 +3,7 @@
 
 int main( void )
 {
-    char* Source  = "http://www.seanlab.net";
+    char* Source  = "This Is Algorithms.";
     char* Decoded = "";
 
     HuffmanNode* Tree = NULL;
@@ -12,13 +12,13 @@ int main( void )
     
     memset ( &CodeTable, 0, sizeof(HuffmanCode) * MAX_CHAR );
     
-    Huffman_Encode( &Tree, Source, &Encoded, CodeTable );
+    Huffman_Encode( &Tree, (UCHAR*)Source, &Encoded, CodeTable );
     
-    printf("Original Size:%d Encoded Size:%d\n", 
+    printf("Original Size:%I64d Encoded Size:%d\n", 
         (strlen(Source) + 1) * sizeof(char) * 8, Encoded.Size);
 
     Decoded = (char*)malloc(sizeof(char) * (strlen(Source) + 1));
-    Huffman_Decode( Tree, &Encoded, Decoded );
+    Huffman_Decode( Tree, &Encoded, (UCHAR*)Decoded );
 
     printf("Original : %s\n", Source );
     printf("Encoded  : ");

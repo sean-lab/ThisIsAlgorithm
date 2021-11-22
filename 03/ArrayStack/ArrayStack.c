@@ -10,7 +10,7 @@ void  AS_CreateStack(ArrayStack** Stack, int Capacity)
 
     //  Capacity 및 Top 초기화 
     (*Stack)->Capacity = Capacity;
-    (*Stack)->Top = 0;
+    (*Stack)->Top = -1;
 }
 
 void AS_DestroyStack(ArrayStack* Stack)
@@ -24,32 +24,27 @@ void AS_DestroyStack(ArrayStack* Stack)
 
 void AS_Push(ArrayStack* Stack, ElementType Data)
 {
-    int Position = Stack->Top;
-
-    Stack->Nodes[Position].Data = Data;
     Stack->Top++;
+    Stack->Nodes[Stack->Top].Data = Data;
 }
 
 ElementType AS_Pop(ArrayStack* Stack)
 {
-    int Position = --( Stack->Top );
-
+    int Position = Stack->Top--;
     return Stack->Nodes[Position].Data;
 }
 
 ElementType AS_Top(ArrayStack* Stack)
 {
-    int Position = Stack->Top - 1;
-
-    return Stack->Nodes[Position].Data;
+    return Stack->Nodes[Stack->Top].Data;
 }
 
 int AS_GetSize(ArrayStack* Stack)
 {
-    return Stack->Top;
+    return Stack->Top+1;
 }
 
 int AS_IsEmpty(ArrayStack* Stack)
 {
-    return (Stack->Top == 0);
+    return (Stack->Top == -1);
 }

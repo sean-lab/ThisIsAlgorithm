@@ -1,4 +1,5 @@
 #include "RedBlackTree.h"
+#include <string.h>
 
 extern RBTNode* Nil;
 
@@ -358,7 +359,7 @@ void RBT_PrintTree( RBTNode* Node, int Depth, int BlackCount )
     if ( Node->Left == Nil && Node->Right == Nil )
         sprintf(cnt, "--------- %d", BlackCount );
     else
-        sprintf(cnt, "");
+        strncpy(cnt, "", sizeof(cnt));        
 
     for ( i=0; i<Depth; i++)
         printf("  ");

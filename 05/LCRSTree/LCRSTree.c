@@ -47,11 +47,16 @@ void LCRS_AddChildNode( LCRSNode* Parent, LCRSNode *Child)
 
 void LCRS_PrintTree( LCRSNode* Node, int Depth )
 {
+    // 들여쓰기
     int i=0; 
-    for ( i=0; i<Depth; i++ )
-        printf(" ");
+    for ( i=0; i<Depth-1; i++ )
+        printf("   "); // 공백 3칸
 
-    printf("%c\n", Node->Data);
+    if (Depth > 0) // 자식노드 여부 표시
+        printf("+--");
+    
+    // 노드 데이터 출력
+    printf("%c\n", Node->Data); 
 
     if ( Node->LeftChild != NULL )
         LCRS_PrintTree(Node->LeftChild, Depth+1);

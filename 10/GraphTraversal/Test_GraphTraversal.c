@@ -49,7 +49,8 @@ int main( void )
     }
     else
     {
-        LinkedQueue* Queue = LQ_CreateQueue();
+        LinkedQueue* Queue = NULL;
+        LQ_CreateQueue(&Queue);
     
         //  너비 우선 탐색 
         BFS(V1, Queue);

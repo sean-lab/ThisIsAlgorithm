@@ -30,4 +30,4 @@ Node* LLS_Top( LinkedListStack* Stack );
 int   LLS_GetSize( LinkedListStack* Stack );
 int   LLS_IsEmpty( LinkedListStack* Stack );
 
-#endif LINKEDLIST_STACK_H
+#endif

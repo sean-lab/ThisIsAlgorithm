@@ -22,4 +22,4 @@ void  DLL_RemoveNode( Node** Head, Node* Remove );
 Node* DLL_GetNodeAt( Node* Head, int Location );
 int   DLL_GetNodeCount( Node* Head );
 
-#endif DOUBLY_LINKEDLIST_H
+#endif

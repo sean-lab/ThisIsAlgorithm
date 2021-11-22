@@ -1,6 +1,6 @@
 .SUFFIXES : .c .o
 CC = gcc
-CFLAGS = -g -Wall -ansi
+CFLAGS = -g -Wall -ansi -std=c99
  all: test
 
 OBJS = Graph.o LinkedList.o Test_TopologicalSort.o TopologicalSort.o

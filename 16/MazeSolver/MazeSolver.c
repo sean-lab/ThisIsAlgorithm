@@ -44,7 +44,6 @@ int Solve( MazeInfo* Maze )
 int MoveTo( MazeInfo* Maze, Position* Current, int Direction )
 {
     int i=0;
-
     int Dirs[] = { NORTH, SOUTH, WEST, EAST };
 
     Position Next;
@@ -134,8 +133,8 @@ int GetMaze( char* FilePath, MazeInfo* Maze )
         }
         else if ( ColumnSize != strlen( buffer ) - 1 )
         {
-            printf("Maze data in file:%s is not valid. %d\n", 
-                FilePath, strlen( buffer ));
+            printf("Maze data in file:%s is not valid.\n", 
+                FilePath);
             fclose( fp );
             return FAIL;
         }

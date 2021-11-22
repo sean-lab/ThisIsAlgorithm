@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #ifndef DISJOINTSET_H
 #define DISJOINTSET_H
+
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct tagDisjointSet
 {

@@ -30,5 +30,5 @@ void TS_DFS( Vertex* V, Node** List )
     printf("%c\n", V->Data );
 
     NewHead = SLL_CreateNode( V );
-    SLL_InsertNewHead( List, &NewHead );
+    SLL_InsertNewHead( List, NewHead );
 }

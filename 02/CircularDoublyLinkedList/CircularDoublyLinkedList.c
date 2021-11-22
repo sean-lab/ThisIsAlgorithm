@@ -70,12 +70,6 @@ void CDLL_RemoveNode(Node** Head, Node* Remove)
     }
     else
     {
-/*
-        Node* Temp = Remove;
-
-        Remove->PrevNode->NextNode = Temp->NextNode;
-        Remove->NextNode->PrevNode = Temp->PrevNode;
-*/
         Remove->PrevNode->NextNode = Remove->NextNode;
         Remove->NextNode->PrevNode = Remove->PrevNode;
 

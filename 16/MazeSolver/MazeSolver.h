@@ -26,10 +26,10 @@ typedef struct tagPosition
 
 typedef struct tagMazeInfo
 {
-    int ColumnSize;
-    int RowSIze;
+    int ColumnSize; // 너비
+    int RowSIze;    // 높이
 
-    char** Data;    
+    char** Data;    // 동적으로 할당한 2차원 배열을 담기 위한 2차원 포인터
 } MazeInfo;
 
 int Solve( MazeInfo* Maze );

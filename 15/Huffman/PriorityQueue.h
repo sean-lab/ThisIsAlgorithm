@@ -29,4 +29,4 @@ int            PQ_GetLeftChild( int Index );
 void           PQ_SwapNodes( PriorityQueue* PQ, int Index1, int Index2 );
 int            PQ_IsEmpty( PriorityQueue* PQ );
 
-#endif PRIORITYQUEUE_H
+#endif

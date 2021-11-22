@@ -1,10 +1,8 @@
 #include "DisjointSet.h"
-#include "Graph.h"
 
 void DS_UnionSet( DisjointSet* Set1, DisjointSet* Set2 )
 {
     Set2 = DS_FindSet(Set2);
-
     Set2->Parent = Set1;
 }
 

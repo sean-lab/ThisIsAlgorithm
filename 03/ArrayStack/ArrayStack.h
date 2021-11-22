@@ -26,4 +26,4 @@ ElementType AS_Top(ArrayStack* Stack);
 int         AS_GetSize(ArrayStack* Stack);
 int         AS_IsEmpty(ArrayStack* Stack);
 
-#endif ARRAYSTACK_H
+#endif

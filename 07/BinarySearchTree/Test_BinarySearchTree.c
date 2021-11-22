@@ -1,7 +1,16 @@
 #include "BinarySearchTree.h"
 
-int main( void )
+
+void PrintSearchResult(int SearchTarget, BSTNode* Result)
 {
+    if(Result != NULL)
+        printf("Found : %d \n", Result->Data);
+    else
+        printf("Not Found:  %d\n", SearchTarget);
+}
+
+int main( void )
+{    
     //  노드 생성 
     BSTNode* Tree = BST_CreateNode(123);
     BSTNode* Node = NULL;
@@ -20,11 +29,13 @@ int main( void )
     BST_InsertNode( Tree, BST_CreateNode(317) );
     BST_InsertNode( Tree, BST_CreateNode(1) );
     
-	Node =  BST_SearchNode(Tree, 17 );
-    if(Node != NULL)
-        printf("%d \n", Node->Data);
-    else
-        puts("그런 노드 없어요");
+    int SearchTarget = 17;
+	Node =  BST_SearchNode(Tree, SearchTarget );
+    PrintSearchResult(SearchTarget, Node);
+
+    SearchTarget = 117;
+    Node =  BST_SearchNode(Tree, SearchTarget );
+    PrintSearchResult(SearchTarget, Node);
 
     //  트리 출력 
     BST_InorderPrintTree( Tree );

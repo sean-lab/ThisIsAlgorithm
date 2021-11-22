@@ -18,4 +18,4 @@ int          IsPrior( char Operator1, char Operator2 );
 void         GetPostfix( char* InfixExpression, char* PostfixExpression );
 double       Calculate( char* PostfixExpression );
 
-#endif CALCULATOR_H
+#endif

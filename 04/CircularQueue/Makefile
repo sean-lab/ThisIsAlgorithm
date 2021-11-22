@@ -1,6 +1,6 @@
 .SUFFIXES : .c .o
 CC = gcc
-CFLAGS = -g -Wall -ansi
+CFLAGS = -g -Wall -ansi -std=c99
  all: test
 
 OBJS = CircularQueue.o Test_CircularQueue.o

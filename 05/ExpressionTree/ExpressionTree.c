@@ -62,7 +62,6 @@ void ET_PostorderPrintTree( ETNode* Node )
 
 void ET_BuildExpressionTree( char* PostfixExpression, ETNode** Node )
 {
-    ETNode* NewNode = NULL;
     int  len        = strlen( PostfixExpression );
     char Token      = PostfixExpression[ len -1 ];
     PostfixExpression[ len-1 ] = '\0';

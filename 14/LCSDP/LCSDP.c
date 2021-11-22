@@ -101,7 +101,6 @@ int main( void )
     int   LEN_Y = strlen(Y);
 
     int   i = 0;
-    int   j = 0;
     int   Length = 0;
 
     LCSTable Table;
@@ -118,8 +117,9 @@ int main( void )
     
     LCS_PrintTable( &Table, X, Y, LEN_X, LEN_Y );
 
-    Result = (char*)malloc( sizeof( Table.Data[LEN_X][LEN_Y] + 1 ) );
-    sprintf( Result, "" );
+    size_t TableSize = sizeof( Table.Data[LEN_X][LEN_Y] + 1 ) ;
+    Result = (char*)malloc(TableSize);
+    memset( Result, 0, TableSize );
 
     LCS_TraceBack(X, Y, LEN_X, LEN_Y, &Table, Result);
 

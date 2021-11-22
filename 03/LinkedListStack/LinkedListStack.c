@@ -46,14 +46,8 @@ void LLS_Push( LinkedListStack* Stack, Node* NewNode )
     } 
     else
     {
-        //  최상위 노드를 찾아 NewNode를 연결한다(쌓는다). 
-        Node* OldTop = Stack->List;
-        while ( OldTop->NextNode != NULL )
-        {
-            OldTop = OldTop->NextNode;
-        }
-
-        OldTop->NextNode = NewNode;
+        //  스택의 Top에 신규 노드를 연결한다.
+        Stack->Top->NextNode = NewNode;
     }
     
     //  스택의 Top 필드에 새 노드의 주소를 등록한다. 
@@ -62,8 +56,9 @@ void LLS_Push( LinkedListStack* Stack, Node* NewNode )
 
 Node* LLS_Pop( LinkedListStack* Stack )
 {
-    //  LLS_Pop() 함수가 반환할 최상위 노드 
+    //  LLS_Pop() 함수가 반환할 최상위 노드 저장 
     Node* TopNode = Stack->Top;
+
 
     if ( Stack->List == Stack->Top )
     {
@@ -72,15 +67,16 @@ Node* LLS_Pop( LinkedListStack* Stack )
     }
     else
     {
-        //  새로운 최상위 노드를 스택의 Top 필드에 등록한다. 
+        // Top 아래에 있던 노드를 새로운 CurrentTop에 저장 
         Node* CurrentTop = Stack->List;
         while ( CurrentTop != NULL && CurrentTop->NextNode != Stack->Top )
         {
             CurrentTop = CurrentTop->NextNode;
         }
 
+        // CurrentTop을 Top에 저장
         Stack->Top = CurrentTop;
-        CurrentTop->NextNode = NULL;
+        Stack->Top->NextNode = NULL;
     }
 
     return TopNode;

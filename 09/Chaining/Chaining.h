@@ -34,4 +34,4 @@ void       CHT_Set( HashTable* HT, KeyType Key, ValueType Value );
 ValueType  CHT_Get( HashTable* HT, KeyType Key );
 int        CHT_Hash( KeyType Key, int KeyLength, int TableSize );
 
-#endif CHAINING_H
+#endif

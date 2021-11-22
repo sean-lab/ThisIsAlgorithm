@@ -7,14 +7,13 @@ int KarpRabin(char* Text, int TextSize, int Start, char* Pattern, int PatternSiz
     int i = 0;
     int j = 0;
     int Coefficient = pow( 2, PatternSize - 1 );
-
     int HashText    = Hash( Text,    PatternSize );
     int HashPattern = Hash( Pattern, PatternSize );
 
     for ( i=Start; i<=TextSize - PatternSize; i++ )
     {
-        HashText = ReHash( Text, i, PatternSize - 1, HashText, Coefficient);
-        
+        HashText = ReHash( Text, i, PatternSize, HashText, Coefficient);
+
         if ( HashPattern == HashText )
         {
             for ( j=0; j<PatternSize; j++ )

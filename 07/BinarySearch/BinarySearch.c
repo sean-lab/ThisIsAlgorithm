@@ -1,8 +1,8 @@
 #include <stdlib.h> 
 #include <stdio.h>
-#include "Score.h"
+#include "Point.h"
 
-Score* BinarySearch( Score ScoreList[], int Size, double Target )
+Point* BinarySearch( Point PointList[], int Size, double Target )
 {
     int Left, Right, Mid;
 
@@ -13,9 +13,9 @@ Score* BinarySearch( Score ScoreList[], int Size, double Target )
     {
         Mid = (Left + Right) / 2;
 
-        if ( Target == ScoreList[Mid].score )
-            return &( ScoreList[Mid] );
-        else if ( Target > ScoreList[Mid].score )
+        if ( Target == PointList[Mid].point )
+            return &( PointList[Mid] );
+        else if ( Target > PointList[Mid].point )
             Left = Mid + 1;
         else
             Right = Mid - 1;
@@ -24,14 +24,14 @@ Score* BinarySearch( Score ScoreList[], int Size, double Target )
     return NULL;
 }
 
-int CompareScore( const void *_elem1, const void *_elem2 ) 
+int ComparePoint( const void *_elem1, const void *_elem2 ) 
 { 
-    Score* elem1 = (Score*)_elem1; 
-    Score* elem2 = (Score*)_elem2; 
+    Point* elem1 = (Point*)_elem1; 
+    Point* elem2 = (Point*)_elem2; 
  
-    if ( elem1->score > elem2->score ) 
+    if ( elem1->point > elem2->point ) 
         return 1; 
-    else if ( elem1->score < elem2->score ) 
+    else if ( elem1->point < elem2->point ) 
         return -1; 
     else 
         return 0;     
@@ -40,16 +40,15 @@ int CompareScore( const void *_elem1, const void *_elem2 )
 int main( void )
 {
     int Length = sizeof DataSet / sizeof DataSet[0];     
-    int i = 0;
-    Score* found = NULL;
+    Point* found = NULL;
  
-    //  점수의 오름차순으로 정렬 
-    qsort( (void*)DataSet, Length, sizeof (Score), CompareScore );
+    //  구매포인트에 대해 오름차순으로 정렬 
+    qsort( (void*)DataSet, Length, sizeof (Point), ComparePoint );
 
-    //  671.78 점을 받은 학생 찾기 
+    //  671.78 포인트 고객 찾기
     found = BinarySearch( DataSet, Length, 671.78 );
 
-    printf("found: %d %f \n", found->number, found->score );
+    printf("found... ID: %d, Point: %f \n", found->id, found->point );
  
     return 0;
 }

@@ -3,13 +3,13 @@ CC = gcc
 CFLAGS = -g -Wall -ansi -std=c99
  all: test
 
-OBJS = ExpressionTree.o Test_ExpressionTree.o
+OBJS = LinkedList.o SequentialSearch.o
 SRCS = $(OBJS:.o=.c)
 
 test: $(OBJS)
-	$(CC) -o ExpressionTree $(OBJS) 
+	$(CC) -o SequentialSearch $(OBJS) 
 
 clean: 
 	rm -rf $(OBJS)
 distclean: 
-	rm -rf $(OBJS) ExpressionTree test
+	rm -rf $(OBJS) LinkedList test

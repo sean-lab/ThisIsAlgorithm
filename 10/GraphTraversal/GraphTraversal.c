@@ -27,11 +27,11 @@ void BFS( Vertex* V, LinkedQueue* Queue )
     V->Visited = Visited;
     
     //  큐에 노드 삽입. 
-    LQ_Enqueue( &Queue, LQ_CreateNode( V ) );
+    LQ_Enqueue( Queue, LQ_CreateNode( V ) );
 
     while ( !LQ_IsEmpty( Queue ) )
     {
-        Node* Popped = LQ_Dequeue( &Queue );
+        Node* Popped = LQ_Dequeue( Queue );
         V = Popped->Data;
         E = V->AdjacencyList;
 
@@ -43,7 +43,7 @@ void BFS( Vertex* V, LinkedQueue* Queue )
             {
                 printf("%d ", V->Data);
                 V->Visited = Visited;
-                LQ_Enqueue( &Queue, LQ_CreateNode( V ) );
+                LQ_Enqueue( Queue, LQ_CreateNode( V ) );
             }
 
             E = E->Next;

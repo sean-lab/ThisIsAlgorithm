@@ -29,4 +29,4 @@ Node* LQ_Dequeue( LinkedQueue* Queue );
 
 int   LQ_IsEmpty( LinkedQueue* Queue );
 
-#endif LINKED_QUEUE_H
+#endif

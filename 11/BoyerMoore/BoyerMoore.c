@@ -1,19 +1,38 @@
 #include "BoyerMoore.h"
 #include <stdlib.h>
 
+int print_table(int* table, int table_size)
+{
+    for(int i=0; i<table_size; i++)
+        if (table[i] > 0)
+            printf("'%C':%d, ", (char)i, table[i]);
+    printf("\n");
+}
+
+int print_GoodSuffTable_table(int* table, int* PosOfBorder, char* Pattern, int table_size)
+{
+    for(int i=0; i<table_size; i++)
+        if (table[i] > 0)
+            printf("'%C':%d(%d), ", Pattern[i], table[i], PosOfBorder[i]);
+    printf("\n");
+}
+
 int  BoyerMoore(char* Text, int TextSize, int Start, 
                 char* Pattern, int PatternSize )
 {
-    int BCT[128];
-    int* Suffix = (int*)calloc( PatternSize + 1, sizeof( int ) );
-    int* GST  = (int*)calloc( PatternSize + 1, sizeof( int ) );
+    int BadCharTable[128]; 
+    int* GoodSuffTable  = (int*)calloc( PatternSize + 1, sizeof( int ) );
+    int* PosOfBorder = (int*)calloc( PatternSize + 1, sizeof( int ) );
     int i = Start;
     int j = 0;
 
     int Position = -1;
 
-    BuildBCT( Pattern, PatternSize, BCT );
-    BuildGST( Pattern, PatternSize, Suffix, GST );
+    BuildBST( Pattern, PatternSize, BadCharTable );    
+    BuildGST( Pattern, PatternSize, PosOfBorder, GoodSuffTable );
+
+    print_table(BadCharTable, 128);
+    print_GoodSuffTable_table(GoodSuffTable, PosOfBorder, Pattern, PatternSize+1);
     
     while (i <= TextSize - PatternSize)
     {
@@ -29,62 +48,63 @@ int  BoyerMoore(char* Text, int TextSize, int Start,
         }
         else 
         {
-            i+= Max( GST[j+1], j-BCT[ Text[i+j] ])  ;
+            i+= Max( GoodSuffTable[j+1], j-BadCharTable[ Text[i+j] ])  ;
         }
     }
 
-    free ( Suffix );
-    free ( GST  );
+    free ( PosOfBorder );
+    free ( GoodSuffTable  );
 
     return Position;
 }
 
-void BuildBCT( char* Pattern, int PatternSize, int* BCT )
+void BuildBST( char* Pattern, int PatternSize, int* BadCharTable )
 {
     int i;
     int j;
 
     for ( i=0; i<128; i++ ) 
-        BCT[i]=-1;
+        BadCharTable[i]=-1;
 
     for ( j=0; j<PatternSize; j++ )
-        BCT[ Pattern[j] ]=j;
+        BadCharTable[ Pattern[j] ]=j;
 }
 
-void BuildGST( char* Pattern, int PatternSize, int* Suffix, int* GST )
+void BuildGST( char* Pattern, int PatternSize, int* PosOfBorder, int* GoodSuffTable )
 {
     //  Case 1 
     int i = PatternSize;
     int j = PatternSize + 1;
 
-    Suffix[i]=j; 
+    PosOfBorder[i]=j; 
     
     while (i>0)
     {
+        printf("%s:%d) %s, i:%d, j:%d\n", __FUNCTION__ , __LINE__, Pattern, i,j );
         while (j<=PatternSize && Pattern[i-1] != Pattern[j-1])
         {
-            if ( GST[j] == 0 ) 
-                GST[j]=j-i;
+            if ( GoodSuffTable[j] == 0 ) 
+                GoodSuffTable[j]=j-i;
 
-            j=Suffix[j];
+            j=PosOfBorder[j];
         }
 
         i--; 
         j--;
         
-        Suffix[i] = j;
+        PosOfBorder[i] = j;
     }
 
     //  Case 2 
-    j = Suffix[0];
+    j = PosOfBorder[0];
 
     for ( i = 0; i <= PatternSize; i++ )
     {
-        if ( GST[i] == 0 ) 
-            GST[i] = j;
+        if ( GoodSuffTable[i] == 0 ) 
+            GoodSuffTable[i] = j;
 
         if ( i == j ) 
-            j = Suffix[j];
+            j = PosOfBorder[j];
     }
 }
 

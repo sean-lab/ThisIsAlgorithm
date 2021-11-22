@@ -22,4 +22,4 @@ void      SBT_PreorderPrintTree( SBTNode* Node );
 void      SBT_InorderPrintTree( SBTNode* Node );
 void      SBT_PostorderPrintTree( SBTNode* Node );
 
-#endif BINARY_TREE_H
+#endif

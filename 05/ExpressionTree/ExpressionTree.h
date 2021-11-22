@@ -25,4 +25,4 @@ void      ET_PostorderPrintTree( ETNode* Node );
 void      ET_BuildExpressionTree( char* PostfixExpression, ETNode** Node );
 double    ET_Evaluate( ETNode* Tree );
 
-#endif EXPRESSION_TREE_H
+#endif
