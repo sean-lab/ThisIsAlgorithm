@@ -1,18 +1,9 @@
 ECHO = echo
-DIRS = BoyerMoore BruteForce KarpRabin KnuthMorrisPratt
+DIRS = RecurrenceSum
 all: $(DIRS)
 
-BoyerMoore: force_look
-	cd BoyerMoore; make
-
-BruteForce: force_look
-	cd BruteForce; make
-
-KarpRabin: force_look
-	cd KarpRabin; make
-
-KnuthMorrisPratt: force_look
-	cd KnuthMorrisPratt; make
+RecurrenceSum: force_look
+	cd RecurrenceSum; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

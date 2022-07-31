@@ -1,15 +1,21 @@
 ECHO = echo
-DIRS = Chaining OpenAddressing SimpleHashTable
+DIRS = Dijkstra Graph GraphTraversal MinimumSpanningTree TopologicalSort
 all: $(DIRS)
 
-Chaining: force_look
-	cd Chaining; make
+Dijkstra: force_look
+	cd Dijkstra; make
 
-OpenAddressing: force_look
-	cd OpenAddressing; make
+Graph: force_look
+	cd Graph; make
 
-SimpleHashTable: force_look
-	cd SimpleHashTable; make
+GraphTraversal: force_look
+	cd GraphTraversal; make
+
+MinimumSpanningTree: force_look
+	cd MinimumSpanningTree; make
+
+TopologicalSort: force_look
+	cd TopologicalSort; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

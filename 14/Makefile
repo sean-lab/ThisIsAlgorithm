@@ -1,15 +1,12 @@
 ECHO = echo
-DIRS = FibonacciDP LCSDC LCSDP
+DIRS = Huffman MakingChange
 all: $(DIRS)
 
-FibonacciDP: force_look
-	cd FibonacciDP; make
+Huffman: force_look
+	cd Huffman; make
 
-LCSDC: force_look
-	cd LCSDC; make
-
-LCSDP: force_look
-	cd LCSDP; make
+MakingChange: force_look
+	cd MakingChange; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

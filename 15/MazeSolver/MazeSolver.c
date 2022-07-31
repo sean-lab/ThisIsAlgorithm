@@ -44,7 +44,7 @@ int Solve( MazeInfo* Maze )
 int MoveTo( MazeInfo* Maze, Position* Current, int Direction )
 {
     int i=0;
-    int Dirs[] = { NORTH, SOUTH, WEST, EAST };
+    int Dirs[] = { NORTH, SOUTH, EAST, WEST };
 
     Position Next;
 
@@ -85,18 +85,19 @@ int GetNextStep( MazeInfo* Maze, Position* Current, int Direction, Position* Nex
         if ( Next->Y == Maze->RowSIze ) return FAIL;
 
         break;
+    case EAST:
+        Next->X = Current->X + 1;
+        Next->Y = Current->Y;        
+
+        if ( Next->X == Maze->ColumnSize ) return FAIL;
+        
+        break;
     case WEST:
         Next->X = Current->X - 1;
         Next->Y = Current->Y;
 
         if ( Next->X == -1 ) return FAIL;
         
-        break;
-    case EAST:
-        Next->X = Current->X + 1;
-        Next->Y = Current->Y;        
-
-        if ( Next->X == Maze->ColumnSize ) return FAIL;
         
         break;
     }    

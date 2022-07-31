@@ -1,18 +1,15 @@
 ECHO = echo
-DIRS = CircularDoublyLinkedList DoublyLinkedList DoublyLinkedList_Modified LinkedList
+DIRS = ArrayStack Calculator LinkedListStack
 all: $(DIRS)
 
-CircularDoublyLinkedList: force_look
-	cd CircularDoublyLinkedList; make
+ArrayStack: force_look
+	cd ArrayStack; make
 
-DoublyLinkedList: force_look
-	cd DoublyLinkedList; make
+Calculator: force_look
+	cd Calculator; make
 
-DoublyLinkedList_Modified: force_look
-	cd DoublyLinkedList_Modified; make
-
-LinkedList: force_look
-	cd LinkedList; make
+LinkedListStack: force_look
+	cd LinkedListStack; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

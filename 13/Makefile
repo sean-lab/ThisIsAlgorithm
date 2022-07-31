@@ -1,15 +1,15 @@
 ECHO = echo
-DIRS = FastExponentiation FibonacciDnC MergeSort
+DIRS = FibonacciDP LCSDC LCSDP
 all: $(DIRS)
 
-FastExponentiation: force_look
-	cd FastExponentiation; make
+FibonacciDP: force_look
+	cd FibonacciDP; make
 
-FibonacciDnC: force_look
-	cd FibonacciDnC; make
+LCSDC: force_look
+	cd LCSDC; make
 
-MergeSort: force_look
-	cd MergeSort; make
+LCSDP: force_look
+	cd LCSDP; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

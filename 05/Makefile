@@ -1,18 +1,18 @@
 ECHO = echo
-DIRS = BinaryTree DisjointSet ExpressionTree LCRSTree
+DIRS = BubbleSort InsertionSort QuickSort QuickSort2
 all: $(DIRS)
 
-BinaryTree: force_look
-	cd BinaryTree; make
+BubbleSort: force_look
+	cd BubbleSort; make
 
-DisjointSet: force_look
-	cd DisjointSet; make
+InsertionSort: force_look
+	cd InsertionSort; make
 
-ExpressionTree: force_look
-	cd ExpressionTree; make
+QuickSort: force_look
+	cd QuickSort; make
 
-LCRSTree: force_look
-	cd LCRSTree; make
+QuickSort2: force_look
+	cd QuickSort2; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

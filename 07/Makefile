@@ -1,18 +1,12 @@
 ECHO = echo
-DIRS = BinarySearch BinarySearch2 BinarySearchTree RedBlackTree
+DIRS = Heap PriorityQueue
 all: $(DIRS)
 
-BinarySearch: force_look
-	cd BinarySearch; make
+Heap: force_look
+	cd Heap; make
 
-BinarySearch2: force_look
-	cd BinarySearch2; make
-
-BinarySearchTree: force_look
-	cd BinarySearchTree; make
-
-RedBlackTree: force_look
-	cd RedBlackTree; make
+PriorityQueue: force_look
+	cd PriorityQueue; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

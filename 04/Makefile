@@ -1,12 +1,18 @@
 ECHO = echo
-DIRS = CircularQueue LinkedQueue
+DIRS = BinaryTree DisjointSet ExpressionTree LCRSTree
 all: $(DIRS)
 
-CircularQueue: force_look
-	cd CircularQueue; make
+BinaryTree: force_look
+	cd BinaryTree; make
 
-LinkedQueue: force_look
-	cd LinkedQueue; make
+DisjointSet: force_look
+	cd DisjointSet; make
+
+ExpressionTree: force_look
+	cd ExpressionTree; make
+
+LCRSTree: force_look
+	cd LCRSTree; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

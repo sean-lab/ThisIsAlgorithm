@@ -1,21 +1,18 @@
 ECHO = echo
-DIRS = Dijkstra Graph GraphTraversal MinimumSpanningTree TopologicalSort
+DIRS = BoyerMoore BruteForce KarpRabin KnuthMorrisPratt
 all: $(DIRS)
 
-Dijkstra: force_look
-	cd Dijkstra; make
+BoyerMoore: force_look
+	cd BoyerMoore; make
 
-Graph: force_look
-	cd Graph; make
+BruteForce: force_look
+	cd BruteForce; make
 
-GraphTraversal: force_look
-	cd GraphTraversal; make
+KarpRabin: force_look
+	cd KarpRabin; make
 
-MinimumSpanningTree: force_look
-	cd MinimumSpanningTree; make
-
-TopologicalSort: force_look
-	cd TopologicalSort; make
+KnuthMorrisPratt: force_look
+	cd KnuthMorrisPratt; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done

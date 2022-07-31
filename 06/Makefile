@@ -1,18 +1,18 @@
 ECHO = echo
-DIRS = BubbleSort InsertionSort QuickSort QuickSort2
+DIRS = BinarySearch BinarySearch2 BinarySearchTree RedBlackTree
 all: $(DIRS)
 
-BubbleSort: force_look
-	cd BubbleSort; make
+BinarySearch: force_look
+	cd BinarySearch; make
 
-InsertionSort: force_look
-	cd InsertionSort; make
+BinarySearch2: force_look
+	cd BinarySearch2; make
 
-QuickSort: force_look
-	cd QuickSort; make
+BinarySearchTree: force_look
+	cd BinarySearchTree; make
 
-QuickSort2: force_look
-	cd QuickSort2; make
+RedBlackTree: force_look
+	cd RedBlackTree; make
 
 clean: force_look
 	-for d in $(DIRS); do (cd $$d; $(MAKE) clean); done
