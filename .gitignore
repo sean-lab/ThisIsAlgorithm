@@ -2,3 +2,4 @@
 *.exe
 *.log
 *.py
+.vscode
