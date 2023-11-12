@@ -3,5 +3,5 @@
 <This is the data structure+algorithm with C> code sample files 
 
 # 서적 구매처
-* Yes24: https://www.yes24.com/Product/Goods/111362116
-* 교보문고: https://www.yes24.com/Product/Goods/111362116
+* [Yes24](https://www.yes24.com/Product/Goods/111362116)
+* [교보문고](https://www.yes24.com/Product/Goods/111362116)
