@@ -56,7 +56,7 @@ void DLL_InsertAfter( Node* Current, Node* NewNode )
 //  노드 제거 
 void DLL_RemoveNode( Node** Head, Node* Remove )
 {
-    if ( *Head == Remove )
+    if ( (*Head) == Remove )
     {
         *Head = Remove->NextNode;
         if ( (*Head) != NULL )

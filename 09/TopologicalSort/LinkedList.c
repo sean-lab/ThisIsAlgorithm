@@ -61,7 +61,7 @@ void  SLL_InsertNewHead(Node** Head, Node* NewHead)
 //  노드 제거 
 void SLL_RemoveNode(Node** Head, Node* Remove)
 {
-    if ( *Head == Remove )
+    if ( (*Head) == Remove )
     {
         *Head = Remove->NextNode;
     }

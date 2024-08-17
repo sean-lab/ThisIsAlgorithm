@@ -58,7 +58,7 @@ void CDLL_InsertAfter(Node* Current, Node* NewNode)
 //  노드 제거 
 void CDLL_RemoveNode(Node** Head, Node* Remove)
 {
-    if ( *Head == Remove )
+    if ( (*Head) == Remove )
     {
         (*Head)->PrevNode->NextNode = Remove->NextNode;
         (*Head)->NextNode->PrevNode = Remove->PrevNode;
