@@ -46,5 +46,8 @@ int main( void )
     
     PrintChange( CoinUnits, Change, UnitCount);
 
+    free(CoinUnits);
+    free(Change);
+
     return 0;
 }

@@ -1,6 +1,6 @@
 .SUFFIXES : .c .o
 CC = gcc
-CFLAGS = -g -Wall -ansi  -finput-charset=utf-8 -fexec-charset=euc-kr
+CFLAGS = -g -Wall -ansi
  all: test
 
 OBJS = MakingChange.o TestMakingChange.o
