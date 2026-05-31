@@ -1,0 +1,20 @@
+[package]
+name = "ch10"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "brute_force"
+path = "src/bin/brute_force.rs"
+
+[[bin]]
+name = "knuth_morris_pratt"
+path = "src/bin/knuth_morris_pratt.rs"
+
+[[bin]]
+name = "karp_rabin"
+path = "src/bin/karp_rabin.rs"
+
+[[bin]]
+name = "boyer_moore"
+path = "src/bin/boyer_moore.rs"

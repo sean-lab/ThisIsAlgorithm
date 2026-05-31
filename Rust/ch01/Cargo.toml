@@ -1,0 +1,16 @@
+[package]
+name = "ch01"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "linked_list"
+path = "src/bin/linked_list.rs"
+
+[[bin]]
+name = "doubly_linked_list"
+path = "src/bin/doubly_linked_list.rs"
+
+[[bin]]
+name = "circular_doubly_linked_list"
+path = "src/bin/circular_doubly_linked_list.rs"

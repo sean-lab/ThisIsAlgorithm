@@ -1,0 +1,20 @@
+[package]
+name = "ch04"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "binary_tree"
+path = "src/bin/binary_tree.rs"
+
+[[bin]]
+name = "disjoint_set"
+path = "src/bin/disjoint_set.rs"
+
+[[bin]]
+name = "expression_tree"
+path = "src/bin/expression_tree.rs"
+
+[[bin]]
+name = "lcrs_tree"
+path = "src/bin/lcrs_tree.rs"

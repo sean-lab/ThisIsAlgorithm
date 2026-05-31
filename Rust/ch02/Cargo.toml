@@ -1,0 +1,20 @@
+[package]
+name = "ch02"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "ch02"
+path = "src/lib.rs"
+
+[[bin]]
+name = "array_stack"
+path = "src/bin/array_stack.rs"
+
+[[bin]]
+name = "linked_list_stack"
+path = "src/bin/linked_list_stack.rs"
+
+[[bin]]
+name = "calculator"
+path = "src/bin/calculator.rs"

@@ -1,0 +1,16 @@
+[package]
+name = "ch08"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "simple_hash_table"
+path = "src/bin/simple_hash_table.rs"
+
+[[bin]]
+name = "chaining"
+path = "src/bin/chaining.rs"
+
+[[bin]]
+name = "open_addressing"
+path = "src/bin/open_addressing.rs"

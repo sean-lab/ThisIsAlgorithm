@@ -1,0 +1,12 @@
+[package]
+name = "ch07"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "heap"
+path = "src/bin/heap.rs"
+
+[[bin]]
+name = "priority_queue"
+path = "src/bin/priority_queue.rs"

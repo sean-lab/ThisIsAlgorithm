@@ -1,0 +1,27 @@
+[package]
+name = "ch09"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "graph"
+path = "src/bin/graph.rs"
+
+[[bin]]
+name = "graph_traversal"
+path = "src/bin/graph_traversal.rs"
+
+[[bin]]
+name = "topological_sort"
+path = "src/bin/topological_sort.rs"
+
+[[bin]]
+name = "dijkstra"
+path = "src/bin/dijkstra.rs"
+
+[[bin]]
+name = "mst"
+path = "src/bin/mst.rs"
