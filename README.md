@@ -3,10 +3,11 @@
 『이것이 자료구조+알고리즘이다 with C언어』 예제 코드 저장소입니다.
 Sample code for *This is the Data Structure + Algorithm with C*.
 
-이 저장소는 두 가지 구현을 함께 제공합니다.
+이 저장소는 세 가지 구현을 함께 제공합니다.
 
 - **[`Clang/`](Clang/)** — 책의 원본 C 예제 코드 (장별로 정리)
 - **[`Rust/`](Rust/)** — 동일한 예제를 Rust로 포팅한 Cargo 워크스페이스
+- **[`Kotlin/`](Kotlin/)** — 동일한 예제를 Kotlin으로 포팅한 Gradle 멀티 서브프로젝트
 
 두 버전은 콘솔 출력이 **바이트 단위로 동일**하도록 맞추어져 있습니다. 원본 C
 코드에서 발견된 일부 버그는 양쪽 모두에서 수정되었으며, 그 내용은 각 디렉터리의
@@ -97,9 +98,31 @@ cargo test            # 전체
 cargo test -p ch01    # 특정 장
 ```
 
+# Kotlin 버전 (`Kotlin/`)
+
+장별 서브프로젝트(`ch01`–`ch15`)로 이루어진 Gradle 멀티 서브프로젝트입니다.
+[JDK 17+](https://adoptium.net/)와 [Gradle](https://gradle.org/)이 필요합니다.
+(포함된 `gradlew` wrapper를 사용하면 Gradle을 별도로 설치하지 않아도 됩니다.)
+
+각 서브프로젝트는 알고리즘 로직(`src/main/kotlin/chNN/`)과 JUnit 5 단위 테스트
+(`src/test/kotlin/chNN/`)로 구성되어 있으며, 이디엄 Kotlin 스타일로 작성되었습니다.
+
+```sh
+cd Kotlin
+
+# 전체 테스트
+./gradlew test
+
+# 특정 장 테스트
+./gradlew :ch01:test
+
+# 빌드만
+./gradlew build
+```
+
 # 버그 수정 (Bug Fixes)
 
-원본 C 예제에서 발견된 정확성/안전성 버그는 C와 Rust 양쪽에서 수정되었습니다.
+원본 C 예제에서 발견된 정확성/안전성 버그는 C, Rust, Kotlin 모두에서 수정되었습니다.
 자세한 내용은 다음 문서를 참고하세요.
 
 - [Clang/06/BinarySearchTree/bug-fix-report.md](Clang/06/BinarySearchTree/bug-fix-report.md) — `BST_RemoveNode` 잘못된 노드 반환 (힙 손상/누수)

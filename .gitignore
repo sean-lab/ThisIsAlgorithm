@@ -50,6 +50,18 @@ Clang/15/NQueens/NQueens
 # ── Logs ────────────────────────────────────────────
 *.log
 
+# ── Kotlin / Gradle ─────────────────────────────────
+Kotlin/build/
+Kotlin/**/build/
+Kotlin/.gradle/
+Kotlin/**/.gradle/
+Kotlin/.kotlin/
+Kotlin/**/.kotlin/
+Kotlin/local.properties
+*.class
+*.jar
+!Kotlin/gradle/wrapper/gradle-wrapper.jar
+
 # ── Editor / OS ─────────────────────────────────────
 .vscode/
 .DS_Store
