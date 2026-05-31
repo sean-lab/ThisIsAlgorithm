@@ -37,3 +37,31 @@ impl Default for LinkedListStack {
         Self::new()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn push_pop_is_lifo() {
+        let mut s = LinkedListStack::new();
+        s.push("abc".to_string());
+        s.push("def".to_string());
+        s.push("efg".to_string());
+        assert_eq!(s.size(), 3);
+        assert_eq!(s.top().unwrap(), "efg");
+        assert_eq!(s.pop().unwrap(), "efg");
+        assert_eq!(s.pop().unwrap(), "def");
+        assert_eq!(s.pop().unwrap(), "abc");
+        assert!(s.is_empty());
+    }
+
+    #[test]
+    fn pop_empty_is_none() {
+        let mut s = LinkedListStack::new();
+        assert!(s.is_empty());
+        assert!(s.pop().is_none());
+        assert!(s.top().is_none());
+    }
+}
+

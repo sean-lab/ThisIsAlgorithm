@@ -126,3 +126,43 @@ impl PriorityQueue {
         self.used_size == 0
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn node(priority: PriorityType) -> PQNode {
+        PQNode {
+            priority,
+            data: ptr::null_mut(),
+        }
+    }
+
+    #[test]
+    fn dequeue_returns_min_priority_first() {
+        let mut pq = PriorityQueue::create(4);
+        for p in [34, 12, 87, 45, 35, 9] {
+            pq.enqueue(node(p));
+        }
+
+        let mut out = Vec::new();
+        let mut root = PQNode::default();
+        while !pq.is_empty() {
+            pq.dequeue(&mut root);
+            out.push(root.priority);
+        }
+
+        assert_eq!(out, vec![9, 12, 34, 35, 45, 87]);
+    }
+
+    #[test]
+    fn is_empty_tracks_size() {
+        let mut pq = PriorityQueue::create(2);
+        assert!(pq.is_empty());
+        pq.enqueue(node(1));
+        assert!(!pq.is_empty());
+        let mut root = PQNode::default();
+        pq.dequeue(&mut root);
+        assert!(pq.is_empty());
+    }
+}

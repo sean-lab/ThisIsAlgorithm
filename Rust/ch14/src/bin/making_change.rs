@@ -1,31 +1,6 @@
+// 거스름돈 만들기 (Making Change) - 로직은 ch14::making_change 모듈에 있다.
+use ch14::making_change::{get_change, print_change};
 use std::io::{self, Read};
-
-fn count_coins(amount: i32, coin_unit: i32) -> i32 {
-    let mut coin_count = 0;
-    let mut current_amount = amount;
-
-    while current_amount >= coin_unit {
-        coin_count += 1;
-        current_amount -= coin_unit;
-    }
-
-    coin_count
-}
-
-fn get_change(price: i32, pay: i32, coin_units: &[i32], change: &mut [i32], size: usize) {
-    let mut change_amount = pay - price;
-
-    for i in 0..size {
-        change[i] = count_coins(change_amount, coin_units[i]);
-        change_amount -= coin_units[i] * change[i];
-    }
-}
-
-fn print_change(coin_units: &[i32], change: &[i32], size: usize) {
-    for i in 0..size {
-        println!("{:8}원 : {}개", coin_units[i], change[i]);
-    }
-}
 
 fn main() {
     let mut input = String::new();

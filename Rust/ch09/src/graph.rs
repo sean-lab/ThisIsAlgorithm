@@ -130,3 +130,59 @@ pub unsafe fn print_graph(g: *mut Graph) {
 
     println!();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn add_vertex_assigns_index_and_counts() {
+        unsafe {
+            let g = create_graph();
+            let a = create_vertex(b'A' as i32);
+            let b = create_vertex(b'B' as i32);
+            let c = create_vertex(b'C' as i32);
+
+            add_vertex(g, a);
+            add_vertex(g, b);
+            add_vertex(g, c);
+
+            assert_eq!((*g).vertex_count, 3);
+            assert_eq!((*a).index, 0);
+            assert_eq!((*b).index, 1);
+            assert_eq!((*c).index, 2);
+
+            destroy_graph(g);
+        }
+    }
+
+    #[test]
+    fn add_edge_builds_adjacency_list() {
+        unsafe {
+            let g = create_graph();
+            let a = create_vertex(b'A' as i32);
+            let b = create_vertex(b'B' as i32);
+            let c = create_vertex(b'C' as i32);
+            add_vertex(g, a);
+            add_vertex(g, b);
+            add_vertex(g, c);
+
+            add_edge(a, create_edge(a, b, 5));
+            add_edge(a, create_edge(a, c, 7));
+
+            // A 의 인접 리스트: B[5] -> C[7]
+            let e1 = (*a).adjacency_list;
+            assert!(!e1.is_null());
+            assert_eq!((*(*e1).target).data, b'B' as i32);
+            assert_eq!((*e1).weight, 5);
+
+            let e2 = (*e1).next;
+            assert!(!e2.is_null());
+            assert_eq!((*(*e2).target).data, b'C' as i32);
+            assert_eq!((*e2).weight, 7);
+            assert!((*e2).next.is_null());
+
+            destroy_graph(g);
+        }
+    }
+}

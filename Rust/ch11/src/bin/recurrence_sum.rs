@@ -1,10 +1,5 @@
-fn recurrence_sum(data: &[i32]) -> i32 {
-    if data.len() == 1 {
-        data[0]
-    } else {
-        recurrence_sum(&data[1..]) + data[0]
-    }
-}
+// 재귀적 합계 (Recurrence Sum) - 로직은 ch11::recurrence_sum 모듈에 있다.
+use ch11::recurrence_sum::recurrence_sum;
 
 fn main() {
     let mut data = [0i32; 150];

@@ -1,36 +1,7 @@
 // 이진 탐색 (Binary Search)
-// Clang/06/BinarySearch 포팅.
-use ch06::points_data::{data_set, Point};
-use std::cmp::Ordering;
-
-fn compare_point(a: &Point, b: &Point) -> Ordering {
-    if a.point > b.point {
-        Ordering::Greater
-    } else if a.point < b.point {
-        Ordering::Less
-    } else {
-        Ordering::Equal
-    }
-}
-
-fn binary_search(list: &[Point], target: f64) -> Option<&Point> {
-    let mut left: i64 = 0;
-    let mut right: i64 = list.len() as i64 - 1;
-
-    while left <= right {
-        let mid = ((left + right) / 2) as usize;
-
-        if target == list[mid].point {
-            return Some(&list[mid]);
-        } else if target > list[mid].point {
-            left = mid as i64 + 1;
-        } else {
-            right = mid as i64 - 1;
-        }
-    }
-
-    None
-}
+// Clang/06/BinarySearch 포팅. 로직은 ch06::search 모듈에 있다.
+use ch06::points_data::data_set;
+use ch06::search::{binary_search, compare_point};
 
 fn main() {
     let mut data = data_set();

@@ -1,17 +1,7 @@
 // 표준 라이브러리 이진 탐색 (BinarySearch2)
 // Clang/06/BinarySearch2 포팅. C의 qsort + bsearch 를 sort_by + binary_search_by 로 옮겼다.
 use ch06::points_data::{data_set, Point};
-use std::cmp::Ordering;
-
-fn compare_point(a: &Point, b: &Point) -> Ordering {
-    if a.point > b.point {
-        Ordering::Greater
-    } else if a.point < b.point {
-        Ordering::Less
-    } else {
-        Ordering::Equal
-    }
-}
+use ch06::search::compare_point;
 
 fn main() {
     let mut data = data_set();

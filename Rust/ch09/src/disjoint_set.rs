@@ -29,3 +29,32 @@ pub unsafe fn ds_make_set(new_data: *mut c_void) -> *mut DisjointSet {
 pub unsafe fn ds_destroy_set(set: *mut DisjointSet) {
     drop(Box::from_raw(set));
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn find_set_returns_root() {
+        unsafe {
+            let a = ds_make_set(ptr::null_mut());
+            let b = ds_make_set(ptr::null_mut());
+            let c = ds_make_set(ptr::null_mut());
+
+            // 단독 집합은 자기 자신이 루트.
+            assert_eq!(ds_find_set(a), a);
+
+            // b, c 를 a 아래로 합친다.
+            ds_union_set(a, b);
+            ds_union_set(a, c);
+
+            assert_eq!(ds_find_set(b), a);
+            assert_eq!(ds_find_set(c), a);
+            assert_eq!(ds_find_set(a), a);
+
+            ds_destroy_set(a);
+            ds_destroy_set(b);
+            ds_destroy_set(c);
+        }
+    }
+}

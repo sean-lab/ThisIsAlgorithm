@@ -3,6 +3,8 @@ use std::fs::File;
 use std::io::{self, BufReader, Read, Write};
 use std::process::ExitCode;
 
+use ch10::brute_force::brute_force;
+
 /// Emulates C `fgets(buf, MAX_BUFFER, fp)` with MAX_BUFFER = 512:
 /// reads at most 511 bytes, stopping early at a newline. Returns an empty
 /// vector at end of file.
@@ -21,24 +23,6 @@ fn fgets(reader: &mut impl Read, buf: &mut Vec<u8>) {
             Err(_) => break,
         }
     }
-}
-
-fn brute_force(text: &[u8], text_size: i32, start: i32, pattern: &[u8], pattern_size: i32) -> i32 {
-    let mut i = start;
-    while i <= text_size - pattern_size {
-        let mut j = 0;
-        while j < pattern_size {
-            if text[(i + j) as usize] != pattern[j as usize] {
-                break;
-            }
-            j += 1;
-        }
-        if j >= pattern_size {
-            return i;
-        }
-        i += 1;
-    }
-    -1
 }
 
 fn main() -> ExitCode {
