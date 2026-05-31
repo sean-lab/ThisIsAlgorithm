@@ -20,25 +20,25 @@ Sample code for *This is the Data Structure + Algorithm with C*.
 
 # 디렉터리 구성
 
-장 번호는 두 버전이 동일하게 대응됩니다 (`Clang/01` ↔ `Rust/ch01`).
+장 번호는 세 버전이 동일하게 대응됩니다 (`Clang/01` ↔ `Rust/ch01` ↔ `Kotlin/ch01`).
 
-| 장 | 주제 | C | Rust |
-|----|------|---|------|
-| 01 | 리스트 (Linked List) | [Clang/01](Clang/01) | [Rust/ch01](Rust/ch01) |
-| 02 | 스택 (Stack) | [Clang/02](Clang/02) | [Rust/ch02](Rust/ch02) |
-| 03 | 큐 (Queue) | [Clang/03](Clang/03) | [Rust/ch03](Rust/ch03) |
-| 04 | 트리 (Tree) | [Clang/04](Clang/04) | [Rust/ch04](Rust/ch04) |
-| 05 | 정렬 (Sorting) | [Clang/05](Clang/05) | [Rust/ch05](Rust/ch05) |
-| 06 | 탐색 (Searching) | [Clang/06](Clang/06) | [Rust/ch06](Rust/ch06) |
-| 07 | 우선순위 큐와 힙 | [Clang/07](Clang/07) | [Rust/ch07](Rust/ch07) |
-| 08 | 해시 테이블 (Hash Table) | [Clang/08](Clang/08) | [Rust/ch08](Rust/ch08) |
-| 09 | 그래프 (Graph) | [Clang/09](Clang/09) | [Rust/ch09](Rust/ch09) |
-| 10 | 문자열 탐색 (String Search) | [Clang/10](Clang/10) | [Rust/ch10](Rust/ch10) |
-| 11 | 점화식과 재귀 | [Clang/11](Clang/11) | [Rust/ch11](Rust/ch11) |
-| 12 | 분할 정복 (Divide & Conquer) | [Clang/12](Clang/12) | [Rust/ch12](Rust/ch12) |
-| 13 | 동적 계획법 (Dynamic Programming) | [Clang/13](Clang/13) | [Rust/ch13](Rust/ch13) |
-| 14 | 탐욕 알고리즘 (Greedy) | [Clang/14](Clang/14) | [Rust/ch14](Rust/ch14) |
-| 15 | 백트래킹 (Backtracking) | [Clang/15](Clang/15) | [Rust/ch15](Rust/ch15) |
+| 장 | 주제 | C | Rust | Kotlin |
+|----|------|---|------|--------|
+| 01 | 리스트 (Linked List) | [Clang/01](Clang/01) | [Rust/ch01](Rust/ch01) | [Kotlin/ch01](Kotlin/ch01) |
+| 02 | 스택 (Stack) | [Clang/02](Clang/02) | [Rust/ch02](Rust/ch02) | [Kotlin/ch02](Kotlin/ch02) |
+| 03 | 큐 (Queue) | [Clang/03](Clang/03) | [Rust/ch03](Rust/ch03) | [Kotlin/ch03](Kotlin/ch03) |
+| 04 | 트리 (Tree) | [Clang/04](Clang/04) | [Rust/ch04](Rust/ch04) | [Kotlin/ch04](Kotlin/ch04) |
+| 05 | 정렬 (Sorting) | [Clang/05](Clang/05) | [Rust/ch05](Rust/ch05) | [Kotlin/ch05](Kotlin/ch05) |
+| 06 | 탐색 (Searching) | [Clang/06](Clang/06) | [Rust/ch06](Rust/ch06) | [Kotlin/ch06](Kotlin/ch06) |
+| 07 | 우선순위 큐와 힙 | [Clang/07](Clang/07) | [Rust/ch07](Rust/ch07) | [Kotlin/ch07](Kotlin/ch07) |
+| 08 | 해시 테이블 (Hash Table) | [Clang/08](Clang/08) | [Rust/ch08](Rust/ch08) | [Kotlin/ch08](Kotlin/ch08) |
+| 09 | 그래프 (Graph) | [Clang/09](Clang/09) | [Rust/ch09](Rust/ch09) | [Kotlin/ch09](Kotlin/ch09) |
+| 10 | 문자열 탐색 (String Search) | [Clang/10](Clang/10) | [Rust/ch10](Rust/ch10) | [Kotlin/ch10](Kotlin/ch10) |
+| 11 | 점화식과 재귀 | [Clang/11](Clang/11) | [Rust/ch11](Rust/ch11) | [Kotlin/ch11](Kotlin/ch11) |
+| 12 | 분할 정복 (Divide & Conquer) | [Clang/12](Clang/12) | [Rust/ch12](Rust/ch12) | [Kotlin/ch12](Kotlin/ch12) |
+| 13 | 동적 계획법 (Dynamic Programming) | [Clang/13](Clang/13) | [Rust/ch13](Rust/ch13) | [Kotlin/ch13](Kotlin/ch13) |
+| 14 | 탐욕 알고리즘 (Greedy) | [Clang/14](Clang/14) | [Rust/ch14](Rust/ch14) | [Kotlin/ch14](Kotlin/ch14) |
+| 15 | 백트래킹 (Backtracking) | [Clang/15](Clang/15) | [Rust/ch15](Rust/ch15) | [Kotlin/ch15](Kotlin/ch15) |
 
 # C 버전 (`Clang/`)
 
