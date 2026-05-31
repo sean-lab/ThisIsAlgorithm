@@ -113,6 +113,12 @@ BSTNode *BST_RemoveNode(BSTNode *Tree, BSTNode *Parent, ElementType Target)
                 BSTNode* MinNode = BST_SearchMinNode(Tree->Right);
                 MinNode = BST_RemoveNode(Tree, NULL, MinNode->Data);
                 Tree->Data = MinNode->Data;
+
+                //  [Bug Fix] 실제로 트리에서 분리된 노드는 MinNode 다.
+                //  Removed(= Tree) 를 그대로 반환하면 호출부가 트리에 아직
+                //  연결된 노드를 해제하여 힙 손상/누수가 발생한다.
+                //  분리된 MinNode 를 반환한다. (bug-fix-report.md 참고)
+                Removed = MinNode;
             }
             else
             {

@@ -46,7 +46,12 @@ void LCS_PrintTable(LCSTable* Table, char* X, char* Y, int LEN_X, int LEN_Y)
 
     for (i = 0; i < LEN_X + 1; i++)
     {
-        printf("%c ", X[i - 1]);
+        //  [Bug Fix] 첫 행(i == 0)에서 X[i - 1] == X[-1] 로 배열 경계 밖을 읽던
+        //  문제를 수정. 첫 행은 빈 칸을 출력한다. (bug-fix-report.md 참고)
+        if (i == 0)
+            printf("%2s", "");
+        else
+            printf("%c ", X[i - 1]);
 
         for (j = 0; j < LEN_Y + 1; j++)
         {

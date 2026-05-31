@@ -117,7 +117,10 @@ int main( void )
     
     LCS_PrintTable( &Table, X, Y, LEN_X, LEN_Y );
 
-    size_t TableSize = sizeof( Table.Data[LEN_X][LEN_Y] + 1 ) ;
+    //  [Bug Fix] sizeof( int + 1 ) 는 항상 4 를 돌려주어 LCS 길이와 무관하게
+    //  4바이트만 할당, 결과 문자열이 길면 힙 버퍼 오버플로가 발생한다.
+    //  실제 의도대로 (LCS 길이 + 1) 바이트를 할당한다. (bug-fix-report.md 참고)
+    size_t TableSize = Table.Data[LEN_X][LEN_Y] + 1 ;
     Result = (char*)malloc(TableSize);
     memset( Result, 0, TableSize );
 
