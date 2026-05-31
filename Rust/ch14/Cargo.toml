@@ -1,0 +1,12 @@
+[package]
+name = "ch14"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "huffman"
+path = "src/bin/huffman.rs"
+
+[[bin]]
+name = "making_change"
+path = "src/bin/making_change.rs"

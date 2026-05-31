@@ -1,0 +1,20 @@
+[package]
+name = "ch05"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "bubble_sort"
+path = "src/bin/bubble_sort.rs"
+
+[[bin]]
+name = "insertion_sort"
+path = "src/bin/insertion_sort.rs"
+
+[[bin]]
+name = "quick_sort"
+path = "src/bin/quick_sort.rs"
+
+[[bin]]
+name = "quick_sort2"
+path = "src/bin/quick_sort2.rs"

@@ -1,0 +1,16 @@
+[package]
+name = "ch12"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "fast_exponentiation"
+path = "src/bin/fast_exponentiation.rs"
+
+[[bin]]
+name = "fibonacci_dnc"
+path = "src/bin/fibonacci_dnc.rs"
+
+[[bin]]
+name = "merge_sort"
+path = "src/bin/merge_sort.rs"

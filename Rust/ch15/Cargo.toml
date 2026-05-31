@@ -1,0 +1,12 @@
+[package]
+name = "ch15"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "maze_solver"
+path = "src/bin/maze_solver.rs"
+
+[[bin]]
+name = "n_queens"
+path = "src/bin/n_queens.rs"

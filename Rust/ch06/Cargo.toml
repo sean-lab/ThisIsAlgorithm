@@ -1,0 +1,28 @@
+[package]
+name = "ch06"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "ch06"
+path = "src/lib.rs"
+
+[[bin]]
+name = "binary_search"
+path = "src/bin/binary_search.rs"
+
+[[bin]]
+name = "binary_search2"
+path = "src/bin/binary_search2.rs"
+
+[[bin]]
+name = "sequential_search"
+path = "src/bin/sequential_search.rs"
+
+[[bin]]
+name = "binary_search_tree"
+path = "src/bin/binary_search_tree.rs"
+
+[[bin]]
+name = "red_black_tree"
+path = "src/bin/red_black_tree.rs"

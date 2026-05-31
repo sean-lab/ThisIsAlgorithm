@@ -1,0 +1,16 @@
+[package]
+name = "ch13"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "fibonacci_dp"
+path = "src/bin/fibonacci_dp.rs"
+
+[[bin]]
+name = "lcsdc"
+path = "src/bin/lcsdc.rs"
+
+[[bin]]
+name = "lcsdp"
+path = "src/bin/lcsdp.rs"

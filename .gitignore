@@ -1,5 +1,56 @@
+# ── C build artifacts ───────────────────────────────
 *.o
+*.obj
 *.exe
+*.out
+*.a
+*.so
+*.dylib
+*.dSYM/
+
+# Compiled C example binaries (one per leaf dir, named after the program)
+Clang/01/CircularDoublyLinkedList/CircularDoublyLinkedList
+Clang/01/DoublyLinkedList/DoublyLinkedList
+Clang/01/LinkedList/LinkedList
+Clang/02/ArrayStack/ArrayStack
+Clang/02/Calculator/Calculator
+Clang/02/LinkedListStack/LinkedListStack
+Clang/03/CircularQueue/CircularQueue
+Clang/03/LinkedQueue/LinkedQueue
+Clang/04/BinaryTree/BinaryTree
+Clang/04/DisjointSet/DisjointSet
+Clang/04/ExpressionTree/ExpressionTree
+Clang/04/LCRSTree/LCRSTree
+Clang/05/BubbleSort/BubbleSort
+Clang/05/InsertionSort/InsertionSort
+Clang/05/QuickSort/QuickSort
+Clang/06/BinarySearch/BinarySearch
+Clang/06/BinarySearchTree/BinarySearchTree
+Clang/06/RedBlackTree/RedBlackTree
+Clang/10/BoyerMoore/BoyerMoore
+Clang/10/BruteForce/BruteForce
+Clang/10/KarpRabin/KarpRabin
+Clang/10/KnuthMorrisPratt/KnuthMorrisPratt
+Clang/11/RecurrenceSum/RecurrenceSum
+Clang/12/FastExponentiation/FastExponentiation
+Clang/12/FibonacciDnC/FibonacciDnC
+Clang/12/MergeSort/MergeSort
+Clang/13/FibonacciDP/FibonacciDP
+Clang/13/LCSDC/LCSDC
+Clang/13/LCSDP/LCSDP
+Clang/14/Huffman/Huffman
+Clang/14/MakingChange/MakingChange
+Clang/15/MazeSolver/MazeSolver
+Clang/15/NQueens/NQueens
+
+# ── Rust / Cargo ────────────────────────────────────
+/Rust/target/
+**/*.rs.bk
+
+# ── Logs ────────────────────────────────────────────
 *.log
-*.py
-.vscode
+
+# ── Editor / OS ─────────────────────────────────────
+.vscode/
+.DS_Store
+.idea/

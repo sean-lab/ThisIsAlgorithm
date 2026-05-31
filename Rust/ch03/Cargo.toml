@@ -1,0 +1,12 @@
+[package]
+name = "ch03"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "circular_queue"
+path = "src/bin/circular_queue.rs"
+
+[[bin]]
+name = "linked_queue"
+path = "src/bin/linked_queue.rs"
